@@ -49,6 +49,7 @@
 		928D5412252495AB004AB475 /* UseCoreNFCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCoreNFCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCoreNFCUITests.swift; sourceTree = "<group>"; };
 		928D5418252495AB004AB475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		928D542725253313004AB475 /* UseCoreNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UseCoreNFC.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +100,7 @@
 		928D53F3252495AA004AB475 /* UseCoreNFC */ = {
 			isa = PBXGroup;
 			children = (
+				928D542725253313004AB475 /* UseCoreNFC.entitlements */,
 				928D53F4252495AA004AB475 /* AppDelegate.swift */,
 				928D53F6252495AA004AB475 /* SceneDelegate.swift */,
 				928D53F8252495AA004AB475 /* ContentView.swift */,
@@ -436,6 +438,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UseCoreNFC/UseCoreNFC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UseCoreNFC/Preview Content\"";
 				DEVELOPMENT_TEAM = 4L3H8AS5LU;
@@ -457,6 +460,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UseCoreNFC/UseCoreNFC.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"UseCoreNFC/Preview Content\"";
 				DEVELOPMENT_TEAM = 4L3H8AS5LU;
