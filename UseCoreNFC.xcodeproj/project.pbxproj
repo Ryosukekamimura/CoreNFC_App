@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92474D9A2526E7FA00DB6CBD /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474D992526E7FA00DB6CBD /* WriteView.swift */; };
+		92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */; };
+		92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */; };
+		92474DB22526EA6F00DB6CBD /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DB12526EA6F00DB6CBD /* RecordType.swift */; };
+		92474DC02526EA9100DB6CBD /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DBF2526EA9100DB6CBD /* Payload.swift */; };
 		928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F4252495AA004AB475 /* AppDelegate.swift */; };
 		928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F6252495AA004AB475 /* SceneDelegate.swift */; };
 		928D53F9252495AA004AB475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F8252495AA004AB475 /* ContentView.swift */; };
@@ -35,6 +40,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		92474D992526E7FA00DB6CBD /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcReadViewModel.swift; sourceTree = "<group>"; };
+		92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcWriteViewModel.swift; sourceTree = "<group>"; };
+		92474DB12526EA6F00DB6CBD /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
+		92474DBF2526EA9100DB6CBD /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		928D53F1252495AA004AB475 /* UseCoreNFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UseCoreNFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		928D53F4252495AA004AB475 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		928D53F6252495AA004AB475 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,6 +87,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92474D982526E7E800DB6CBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				928D53F8252495AA004AB475 /* ContentView.swift */,
+				92474D992526E7FA00DB6CBD /* WriteView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92474DC72526EAB800DB6CBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */,
+				92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92474DC82526EAC400DB6CBD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92474DBF2526EA9100DB6CBD /* Payload.swift */,
+				92474DB12526EA6F00DB6CBD /* RecordType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		928D53E8252495AA004AB475 = {
 			isa = PBXGroup;
 			children = (
@@ -100,10 +137,12 @@
 		928D53F3252495AA004AB475 /* UseCoreNFC */ = {
 			isa = PBXGroup;
 			children = (
+				92474DC82526EAC400DB6CBD /* Model */,
+				92474DC72526EAB800DB6CBD /* ViewModel */,
+				92474D982526E7E800DB6CBD /* View */,
 				928D542725253313004AB475 /* UseCoreNFC.entitlements */,
 				928D53F4252495AA004AB475 /* AppDelegate.swift */,
 				928D53F6252495AA004AB475 /* SceneDelegate.swift */,
-				928D53F8252495AA004AB475 /* ContentView.swift */,
 				928D53FA252495AB004AB475 /* Assets.xcassets */,
 				928D53FF252495AB004AB475 /* LaunchScreen.storyboard */,
 				928D5402252495AB004AB475 /* Info.plist */,
@@ -269,8 +308,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */,
+				92474D9A2526E7FA00DB6CBD /* WriteView.swift in Sources */,
+				92474DC02526EA9100DB6CBD /* Payload.swift in Sources */,
 				928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */,
+				92474DB22526EA6F00DB6CBD /* RecordType.swift in Sources */,
+				92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */,
 				928D53F9252495AA004AB475 /* ContentView.swift in Sources */,
+				92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
