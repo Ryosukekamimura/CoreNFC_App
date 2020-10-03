@@ -98,8 +98,12 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                             return
                         }
                         
-                        // Date を読み取り書き込む
+                        // MARK: - Date を読み取り書き込む
+                        let nowTime = Date()
+                        print("現在の時刻を取得する\(nowTime)")
+                        print(type(of: nowTime))
                         
+                        let format_nowTime = DateUtils.stringFromDate(date: nowTime, format: "yyyy年MM月dd日 HH時mm分ss秒 Z")
                         
                         
 
@@ -107,7 +111,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                             format: .nfcWellKnown,
                             type: "T".data(using: .utf8)!,
                             identifier: "Text".data(using: .utf8)!,
-                            payload: self.message.data(using: .utf8)! + "2020-10-2 13:30".data(using: .utf8)!
+                            payload: self.message.data(using: .utf8)! + format_nowTime.data(using: .utf8)!
                         )
                     
                     case .url :

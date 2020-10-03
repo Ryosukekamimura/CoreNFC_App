@@ -12,11 +12,13 @@ import CoreNFC
 struct ContentView: View {
     @State var data = ""
     @State var showWrite = false
-    let holder = "Read message will display here ..."
+    let holder = "記録がここに表示されます"
     
     var body: some View {
         NavigationView{
+            
             GeometryReader{ reader in
+                
                 VStack(spacing: 30){
                     ZStack(alignment: .topLeading){
                         RoundedRectangle(cornerRadius: 20)
@@ -26,29 +28,30 @@ struct ContentView: View {
                         Text(self.data.isEmpty ? self.holder : self.data)
                             .foregroundColor(self.data.isEmpty ? .gray : .black)
                             .padding()
+                        
                     }.frame(height: reader.size.height * 0.4)
+                    
+                    
                     nfcButton(data: self.$data)
                         .frame(height: reader.size.height * 0.07)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                     // Write Button
-                    NavigationLink(destination: WriteView(isActive: self.$showWrite), isActive: self.$showWrite){
+                    NavigationLink(destination: WriteView(isActive: self.$showWrite, data: self.$data), isActive: self.$showWrite){
                         Button(action: {
                             self.showWrite.toggle()
                         }, label: {
-                            Text("Write NFC ")
+                            Text("NFCに書き込み")
                                 .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
                         }).foregroundColor(.white)
                         .background(Color(.black))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                        
-                        
                     }
                     
                     
                     Spacer()
-                }.frame(width: reader.size.width * 0.9)
-                .navigationBarTitle("NFC App", displayMode: .inline)
+                }
+                .navigationBarTitle("NFCで時間管理", displayMode: .inline)
                 .padding(.top, 20)
             }
         }
@@ -63,8 +66,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-
-
 

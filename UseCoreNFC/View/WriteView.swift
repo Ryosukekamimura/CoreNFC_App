@@ -7,10 +7,18 @@
 
 import SwiftUI
 
+
+
+
 struct WriteView : View {
+    
+    
     @State var record = ""
     @State private var selection = 0
     @Binding var isActive : Bool
+    
+    @Binding var data: String
+    
     
     var sessionWrite = NFCSessionWrite()
     var recordType = [Payload(type: .text, pickerMsg: "Text"), Payload(type: .url, pickerMsg: "URL")]
@@ -37,6 +45,15 @@ struct WriteView : View {
                     Text("Write")
                 })
             }
+            
+            
+            Section{
+                nfcButton(data: self.$data)
+                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+            }
+            
+            
             Text("Writing View")
                 .navigationBarTitle("NFC Write")
                 .navigationBarItems(leading:
@@ -55,8 +72,3 @@ struct WriteView : View {
     }
 }
 
-struct WriteView_Preview: PreviewProvider{
-    static var previews: some View{
-        WriteView(isActive: .constant(false))
-    }
-}
