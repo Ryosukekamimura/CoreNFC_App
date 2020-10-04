@@ -26,7 +26,7 @@ struct WriteView : View {
         
         Form {
             Section {
-                TextField("Message here.. ", text: self.$record)
+                TextField("メモを記録しよう！", text: self.$record)
                 
             }
 
