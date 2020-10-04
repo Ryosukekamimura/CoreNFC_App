@@ -21,7 +21,6 @@ struct WriteView : View {
     
     
     var sessionWrite = NFCSessionWrite()
-    var recordType = [Payload(type: .text, pickerMsg: "Text"), Payload(type: .url, pickerMsg: "URL")]
     
     var body: some View{
         
@@ -30,17 +29,11 @@ struct WriteView : View {
                 TextField("Message here.. ", text: self.$record)
                 
             }
-            Section {
-                Picker(selection: self.$selection, label: Text("Pick a record type."), content: {
-                    ForEach(0..<self.recordType.count){
-                        Text(verbatim: self.recordType[$0].pickerMsg)
-                    }
-                })
-            }
+
             
             Section{
                 Button(action: {
-                    self.sessionWrite.beginScanning(message: self.record, recordType: self.recordType[selection].type)
+                    self.sessionWrite.beginScanning(message: self.record)
                 }, label: {
                     Text("Write")
                 })

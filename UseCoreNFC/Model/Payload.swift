@@ -8,7 +8,6 @@
 import Foundation
 
 struct Payload {
-    var type : RecordType
     var pickerMsg : String
 }
 

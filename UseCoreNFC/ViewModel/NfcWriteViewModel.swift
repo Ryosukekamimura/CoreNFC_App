@@ -13,18 +13,16 @@ import UIKit
 class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     var session : NFCNDEFReaderSession?
     var message : String = ""
-    var recordType : RecordType = .text
     
     
     
-    func  beginScanning(message: String, recordType: RecordType){
+    func  beginScanning(message: String){
         guard NFCNDEFReaderSession.readingAvailable else{
             print("Scanning not support for this device.")
             return
             
         }
         self.message = message
-        self.recordType = recordType
         
         session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: false)
         session?.alertMessage = "Hold your iPhone newar an NFC tag to write message."
@@ -89,44 +87,29 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                     // Writing code logic
                     print("Read Write")
                     let payLoad : NFCNDEFPayload?
-                    switch self.recordType {
-                    
-                    case .text:
-                        guard !self.message.isEmpty else {
-                            session.alertMessage = "Empty Data"
-                            session.invalidate(errorMessage: "Empty Text data")
-                            return
-                        }
-                        
-                        // MARK: - Date を読み取り書き込む
-                        let nowTime = Date()
-                        print("現在の時刻を取得する\(nowTime)")
-                        print(type(of: nowTime))
-                        
-                        let format_nowTime = DateUtils.stringFromDate(date: nowTime, format: "yyyy年MM月dd日 HH時mm分ss秒 Z")
-                        
-                        
 
-                        payLoad = NFCNDEFPayload(
-                            format: .nfcWellKnown,
-                            type: "T".data(using: .utf8)!,
-                            identifier: "Text".data(using: .utf8)!,
-                            payload: self.message.data(using: .utf8)! + format_nowTime.data(using: .utf8)!
-                        )
-                    
-                    case .url :
-                        //Make sure our URL is actual URL
-                        guard let url = URL(string: self.message) else {
-                            print("Not a valid URL")
-                            session.alertMessage = "Unrecognize URL"
-                            session.invalidate(errorMessage: "Data is not a URL")
-                            return
-                        }
-                        
-                        // make paypload
-                        payLoad = NFCNDEFPayload.wellKnownTypeURIPayload(url: url)
-                        
+                    guard !self.message.isEmpty else {
+                        session.alertMessage = "Empty Data"
+                        session.invalidate(errorMessage: "Empty Text data")
+                        return
                     }
+                    
+                    // MARK: - Date を読み取り書き込む
+                    let nowTime = Date()
+                    print("現在の時刻を取得する\(nowTime)")
+                    print(type(of: nowTime))
+                    
+                    let format_nowTime = DateUtils.stringFromDate(date: nowTime, format: "yyyy年MM月dd日 HH時mm分ss秒 Z")
+                    
+                    
+
+                    payLoad = NFCNDEFPayload(
+                        format: .nfcWellKnown,
+                        type: "T".data(using: .utf8)!,
+                        identifier: "Text".data(using: .utf8)!,
+                        payload: self.message.data(using: .utf8)! + format_nowTime.data(using: .utf8)!
+                    )
+
                     
                     //make our message array
                     let nfcMessage = NFCNDEFMessage(records: [payLoad!])
