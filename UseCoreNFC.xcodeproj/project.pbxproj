@@ -20,6 +20,7 @@
 		928D5401252495AB004AB475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928D53FF252495AB004AB475 /* LaunchScreen.storyboard */; };
 		928D540C252495AB004AB475 /* UseCoreNFCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D540B252495AB004AB475 /* UseCoreNFCTests.swift */; };
 		928D5417252495AB004AB475 /* UseCoreNFCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */; };
+		92FE4CB02529A73F00589C2E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE4CAF2529A73F00589C2E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCoreNFCUITests.swift; sourceTree = "<group>"; };
 		928D5418252495AB004AB475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928D542725253313004AB475 /* UseCoreNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UseCoreNFC.entitlements; sourceTree = "<group>"; };
+		92FE4CAF2529A73F00589C2E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				928D53F8252495AA004AB475 /* ContentView.swift */,
+				92FE4CAF2529A73F00589C2E /* CardView.swift */,
 				92474D992526E7FA00DB6CBD /* WriteView.swift */,
 			);
 			path = View;
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				92474DD02526F20000DB6CBD /* DateFormatter.swift in Sources */,
+				92FE4CB02529A73F00589C2E /* CardView.swift in Sources */,
 				928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */,
 				92474D9A2526E7FA00DB6CBD /* WriteView.swift in Sources */,
 				92474DC02526EA9100DB6CBD /* Payload.swift in Sources */,

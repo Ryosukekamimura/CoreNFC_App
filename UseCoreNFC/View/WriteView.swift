@@ -18,6 +18,7 @@ struct WriteView : View {
     @Binding var isActive : Bool
     
     @Binding var data: String
+    @Binding var dataStock : [String]
     
     
     var sessionWrite = NFCSessionWrite()
@@ -41,7 +42,7 @@ struct WriteView : View {
             
             
             Section{
-                nfcButton(data: self.$data)
+                nfcButton(data: self.$data, dataStock: self.$dataStock)
                     .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     .clipShape(RoundedRectangle(cornerRadius: 20))
             }

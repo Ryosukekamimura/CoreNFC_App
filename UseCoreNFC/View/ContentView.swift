@@ -14,30 +14,37 @@ struct ContentView: View {
     @State var showWrite = false
     let holder = "記録がここに表示されます"
     
+    @State var dataStock: [String] = []
+    
     var body: some View {
         NavigationView{
             
             GeometryReader{ reader in
                 
                 VStack(spacing: 30){
-                    ZStack(alignment: .topLeading){
-                        RoundedRectangle(cornerRadius: 20)
-                            .foregroundColor(.white)
-                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 4))
-                        
-                        Text(self.data.isEmpty ? self.holder : self.data)
-                            .foregroundColor(self.data.isEmpty ? .gray : .black)
-                            .padding()
-                        
-                    }.frame(height: reader.size.height * 0.4)
+//                    ZStack(alignment: .topLeading){
+//                        RoundedRectangle(cornerRadius: 20)
+//                            .foregroundColor(.white)
+//                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 4))
+//
+//                        Text(self.data.isEmpty ? self.holder : self.data)
+//                            .foregroundColor(self.data.isEmpty ? .gray : .black)
+//                            .padding()
+//
+//                    }.frame(height: reader.size.height * 0.4)
                     
+                    List(self.dataStock, id:\.self) { dailyData in
+                        Text("\(dailyData)")
+                    }
                     
-                    nfcButton(data: self.$data)
+
+                    
+                    nfcButton(data: self.$data, dataStock: self.$dataStock)
                         .frame(height: reader.size.height * 0.07)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                     // Write Button
-                    NavigationLink(destination: WriteView(isActive: self.$showWrite, data: self.$data), isActive: self.$showWrite){
+                    NavigationLink(destination: WriteView(isActive: self.$showWrite, data: self.$data, dataStock: self.$dataStock), isActive: self.$showWrite){
                         Button(action: {
                             self.showWrite.toggle()
                         }, label: {
