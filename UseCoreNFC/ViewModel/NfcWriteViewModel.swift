@@ -88,11 +88,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                     print("Read Write")
                     let payLoad : NFCNDEFPayload?
 
-                    guard !self.message.isEmpty else {
-                        session.alertMessage = "Empty Data"
-                        session.invalidate(errorMessage: "Empty Text data")
-                        return
-                    }
+
                     
                     // MARK: - Date を読み取り書き込む
                     let nowTime = Date()
