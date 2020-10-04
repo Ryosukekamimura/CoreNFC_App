@@ -16,6 +16,7 @@ import SwiftUI
 struct nfcButton : UIViewRepresentable {
     
     @Binding var data : String
+    @Binding var dataStock : [String]
     
     func makeUIView(context: UIViewRepresentableContext<nfcButton>) -> UIButton {
         let button = UIButton()
@@ -35,7 +36,7 @@ struct nfcButton : UIViewRepresentable {
     typealias UIViewType = UIButton
     
     func makeCoordinator() -> nfcButton.Coordinator {
-        return Coordinator(data: $data)
+        return Coordinator(data: $data, dataStock: $dataStock)
     }
     
     class Coordinator: NSObject, NFCNDEFReaderSessionDelegate{
@@ -43,9 +44,11 @@ struct nfcButton : UIViewRepresentable {
         
         var session : NFCNDEFReaderSession?
         @Binding var data : String
+        @Binding var dataStock: [String]
         
-        init(data: Binding<String>) {
+        init(data: Binding<String>, dataStock: Binding<[String]>) {
             _data = data
+            _dataStock = dataStock
         }
         
         
@@ -87,6 +90,8 @@ struct nfcButton : UIViewRepresentable {
             
             print(payload)
             self.data = payload
+            self.dataStock.append(self.data)
+            print("dataStock is \(self.dataStock)")
         }
         
         
