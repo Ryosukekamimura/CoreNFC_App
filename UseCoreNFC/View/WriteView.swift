@@ -30,7 +30,7 @@ struct WriteView : View {
                 TextField("メモを記録しよう！", text: self.$record)
                 
             }
-
+            
             
             Section{
                 Button(action: {
@@ -41,26 +41,14 @@ struct WriteView : View {
             }
             
             
-            Section{
-                nfcButton(data: self.$data, dataStock: self.$dataStock)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-            }
+            
+            nfcButton(data: self.$data, dataStock: self.$dataStock)
+                .frame(width: UIScreen.main.bounds.width / 2, height: 200)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             
             
-            Text("Writing View")
-                .navigationBarTitle("NFC Write")
-                .navigationBarItems(leading:
-                                        
-                Button(action: {
-                    self.isActive.toggle()
-                    }, label:{
-                        HStack(spacing: 5){
-                            Image(systemName: "chevron.left")
-                            Text("back")
-                        }
-                    })
-                )
+            
+            
         }
         
     }

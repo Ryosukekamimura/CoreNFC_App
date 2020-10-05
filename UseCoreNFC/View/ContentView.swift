@@ -33,11 +33,14 @@ struct ContentView: View {
 //
 //                    }.frame(height: reader.size.height * 0.4)
                     
-                    List(self.dataStock, id:\.self) { dailyData in
-                        Text("\(dailyData)")
-                    }
                     
-
+                    ScrollView(.vertical){
+                        
+                        ForEach(self.dataStock, id:\.self){ dailyData in
+                            CardView(content: dailyData)
+                            
+                        }
+                    }
                     
                     nfcButton(data: self.$data, dataStock: self.$dataStock)
                         .frame(height: reader.size.height * 0.07)

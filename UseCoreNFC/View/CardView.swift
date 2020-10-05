@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct CardView: View {
+    
+    var content: String
+    
+    
     var body: some View {
         HStack{
             
-            Text("10/4")
+            Text("\(content)")
                 .foregroundColor(.black)
                 .fontWeight(.bold)
     
@@ -29,6 +33,6 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        CardView(content: "2020-10-1")
     }
 }
