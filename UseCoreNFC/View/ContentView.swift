@@ -35,10 +35,8 @@ struct ContentView: View {
                     
                     
                     ScrollView(.vertical){
-                        
                         ForEach(self.dataStock, id:\.self){ dailyData in
                             CardView(content: dailyData)
-                            
                         }
                     }
                     

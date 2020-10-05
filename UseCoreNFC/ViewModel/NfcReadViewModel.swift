@@ -24,9 +24,6 @@ struct nfcButton : UIViewRepresentable {
         button.backgroundColor = UIColor.black
         button.addTarget(context.coordinator, action: #selector(context.coordinator.beginScan(_:)), for: .touchUpInside)
         return button
-        
-        
-        
     }
     
     func updateUIView(_ uiView: UIButton, context: UIViewRepresentableContext<nfcButton>) {

@@ -11,6 +11,7 @@ import UIKit
 
 
 class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
+    
     var session : NFCNDEFReaderSession?
     var message : String = ""
     
@@ -18,14 +19,14 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     
     func  beginScanning(message: String){
         guard NFCNDEFReaderSession.readingAvailable else{
-            print("Scanning not support for this device.")
+            print("スキャンに対応されていない機種です。申し訳ございません。")
             return
             
         }
         self.message = message
         
         session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: false)
-        session?.alertMessage = "Hold your iPhone newar an NFC tag to write message."
+        session?.alertMessage = "データを書き込むのでNFCタグに近づけてください"
         session?.begin()
     }
     

@@ -23,14 +23,13 @@ struct WriteView : View {
     
     var sessionWrite = NFCSessionWrite()
     
+    
     var body: some View{
         
         Form {
             Section {
                 TextField("メモを記録しよう！", text: self.$record)
-                
             }
-            
             
             Section{
                 Button(action: {
@@ -40,15 +39,17 @@ struct WriteView : View {
                 })
             }
             
-            
+            Section{
+                Button(action: {
+                    NFCReaderSession(data: self.$data, dataStock: self.$dataStock).beginScan()
+                }, label: {
+                    Text("Read")
+                })
+            }
             
             nfcButton(data: self.$data, dataStock: self.$dataStock)
                 .frame(width: UIScreen.main.bounds.width / 2, height: 200)
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-            
-            
-            
-            
         }
         
     }
