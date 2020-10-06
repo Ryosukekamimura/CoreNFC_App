@@ -16,7 +16,6 @@ class NFCReaderSession: NSObject, NFCNDEFReaderSessionDelegate{
     @Binding var data : String
     @Binding var dataStock: [String]
     
-    
     init(data: Binding<String>, dataStock: Binding<[String]>) {
         _data = data
         _dataStock = dataStock
@@ -27,7 +26,6 @@ class NFCReaderSession: NSObject, NFCNDEFReaderSessionDelegate{
             print("スキャンに対応されていない機種です。申し訳ございません。")
             return
         }
-        
         session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: true)
         session?.alertMessage = "NFCタグを読み取るので近づけてください"
         session?.begin()
@@ -59,6 +57,11 @@ class NFCReaderSession: NSObject, NFCNDEFReaderSessionDelegate{
         self.dataStock.append(self.data)
         print("dataStock is \(self.dataStock)")
         
-        print("didDetectNDEFs messages is called")
+        print("didDetectNDEFs messagesw is called")
+    }
+    
+    // scanning for new tags.
+    func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
+        // Nothing to write
     }
 }

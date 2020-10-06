@@ -21,6 +21,7 @@ struct WriteView : View {
     @Binding var dataStock : [String]
     
     
+
     var sessionWrite = NFCSessionWrite()
     
     

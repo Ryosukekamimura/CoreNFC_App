@@ -15,16 +15,14 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     var session : NFCNDEFReaderSession?
     var message : String = ""
     
+
     
-    
-    func  beginScanning(message: String){
+    public func  beginScanning(message: String){
         guard NFCNDEFReaderSession.readingAvailable else{
             print("スキャンに対応されていない機種です。申し訳ございません。")
             return
-            
         }
         self.message = message
-        
         session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: false)
         session?.alertMessage = "データを書き込むのでNFCタグに近づけてください"
         session?.begin()
@@ -63,10 +61,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                 session.invalidate()
                 print("Error connect")
                 return
-                
             }
-            
-            
             // Query tag if no error occur
             tag.queryNDEFStatus {(ndefStatus, capacity, error) in
                 if error != nil {
@@ -106,10 +101,12 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         identifier: "Text".data(using: .utf8)!,
                         payload: self.message.data(using: .utf8)! + format_nowTime.data(using: .utf8)!
                     )
-
+                    
+                    print("\(format_nowTime)　フォーマットされた現在時刻を表示する")
                     
                     //make our message array
                     let nfcMessage = NFCNDEFMessage(records: [payLoad!])
+                    print("\(nfcMessage)")
                     
                     // write to tag
                     tag.writeNDEF(nfcMessage) { (error) in
@@ -117,6 +114,8 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                             session.alertMessage = "Write NDEF fail : \(error!.localizedDescription)"
                             print("fail write : \(String(describing: error?.localizedDescription))")
                         } else {
+                            
+                            // to write
                             session.alertMessage = "Write NDEF successful."
                             print("Success write.")
                         }
