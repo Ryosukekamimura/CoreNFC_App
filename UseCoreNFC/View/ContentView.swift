@@ -44,7 +44,7 @@ struct ContentView: View {
                     Text("\(self.readingData)")
                     
                     nfcButton(data: self.$data, dataStock: self.$dataStock)
-                        .frame(height: reader.size.height * 0.07)
+                        .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07, alignment: .center)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
                     // Write Button
@@ -62,7 +62,7 @@ struct ContentView: View {
                     
                     Spacer()
                 }
-                .navigationBarTitle("NFCで時間管理", displayMode: .inline)
+                .navigationBarTitle("ピットTime ~時間管理ツール~", displayMode: .inline)
                 .padding(.top, 20)
             }
         }
