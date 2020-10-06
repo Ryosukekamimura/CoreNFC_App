@@ -16,6 +16,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     var message : String = ""
     
 
+
     
     public func  beginScanning(message: String){
         guard NFCNDEFReaderSession.readingAvailable else{
@@ -83,8 +84,6 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                     // Writing code logic
                     print("Read Write")
                     let payLoad : NFCNDEFPayload?
-
-
                     
                     // MARK: - Date を読み取り書き込む
                     let nowTime = Date()
@@ -93,7 +92,8 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                     
                     let format_nowTime = DateUtils.stringFromDate(date: nowTime, format: "yyyy年MM月dd日 HH時mm分ss秒 Z")
                     
-                    
+                    print("\(format_nowTime)フォーマットされた現在時刻を表示")
+                    //self.readingData = format_nowTime
 
                     payLoad = NFCNDEFPayload(
                         format: .nfcWellKnown,
@@ -119,7 +119,6 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                             session.alertMessage = "Write NDEF successful."
                             print("Success write.")
                         }
-                        
                         session.invalidate()
                     }
                     

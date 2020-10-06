@@ -16,6 +16,8 @@ struct ContentView: View {
     
     @State var dataStock: [String] = []
     
+    @State var readingData: String = ""
+    
     var body: some View {
         NavigationView{
             
@@ -39,6 +41,7 @@ struct ContentView: View {
                             CardView(content: dailyData)
                         }
                     }
+                    Text("\(self.readingData)")
                     
                     nfcButton(data: self.$data, dataStock: self.$dataStock)
                         .frame(height: reader.size.height * 0.07)

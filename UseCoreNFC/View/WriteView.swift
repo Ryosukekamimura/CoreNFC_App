@@ -14,14 +14,15 @@ struct WriteView : View {
     
     
     @State var record = ""
-    @State private var selection = 0
     @Binding var isActive : Bool
     
     @Binding var data: String
     @Binding var dataStock : [String]
-    
+
     
 
+
+    
     var sessionWrite = NFCSessionWrite()
     
     
