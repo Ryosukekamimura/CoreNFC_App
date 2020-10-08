@@ -17,6 +17,7 @@ class CoreDataManager {
         self.moc = moc
     }
     
+    
     private func fetchRecord(input: String) -> Record? {
         var records = [Record]()
         let request: NSFetchRequest<Record> = Record.fetchRequest()
@@ -30,7 +31,7 @@ class CoreDataManager {
         return records.first
     }
     
-    
+    // delete method
     func deleteRecord(input: String) {
         do {
             if let record = fetchRecord(input: input){
@@ -42,6 +43,7 @@ class CoreDataManager {
         }
     }
     
+    //
     func getAllRecords() -> [Record] {
         var records = [Record]()
         let recordRequest: NSFetchRequest<Record> = Record.fetchRequest()
@@ -54,6 +56,7 @@ class CoreDataManager {
         return records
     }
     
+    // save method
     func saveRecord(input: String) {
         let record = Record(context: self.moc)
         record.input = input
