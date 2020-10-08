@@ -17,6 +17,7 @@ struct nfcButton : UIViewRepresentable {
     
     @Binding var data : String
     @Binding var dataStock : [String]
+
     
     func makeUIView(context: UIViewRepresentableContext<nfcButton>) -> UIButton {
         let button = UIButton()
@@ -29,6 +30,8 @@ struct nfcButton : UIViewRepresentable {
     func updateUIView(_ uiView: UIButton, context: UIViewRepresentableContext<nfcButton>) {
         // do nothing
     }
+    
+    
     
     typealias UIViewType = UIButton
     
@@ -43,9 +46,17 @@ struct nfcButton : UIViewRepresentable {
         @Binding var data : String
         @Binding var dataStock: [String]
         
+        @State var addRecordVM = AddRecordViewModel()
+        @ObservedObject var recordVM: RecordViewModel = RecordViewModel()
+    
+        
+        var input_str : String = ""
+        
         init(data: Binding<String>, dataStock: Binding<[String]>) {
             _data = data
             _dataStock = dataStock
+            
+            
         }
         
         
@@ -86,9 +97,20 @@ struct nfcButton : UIViewRepresentable {
             
             
             print(payload)
-            self.data = payload
-            self.dataStock.append(self.data)
-            print("dataStock is \(self.dataStock)")
+            //self.data = payload
+            
+            
+            // dataStock をデータ永続化にする
+            addRecordVM.input = payload
+            
+//            self.dataStock.append(self.data)
+//            print("dataStock is \(self.dataStock)")
+//
+            
+            addRecordVM.saveRecord()
+            
+            self.recordVM.fetchAllRecords()
+            
         }
         
         

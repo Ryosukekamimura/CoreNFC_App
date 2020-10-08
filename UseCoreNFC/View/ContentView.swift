@@ -9,6 +9,7 @@ import SwiftUI
 import CoreNFC
 
 
+
 struct ContentView: View {
     @State var data = ""
     @State var showWrite = false
@@ -18,31 +19,34 @@ struct ContentView: View {
     
     @State var readingData: String = ""
     
+    @ObservedObject var recordVM : RecordViewModel
+    
+    init() {
+        self.recordVM = RecordViewModel()
+    }
+    
+    private func delete(at offsets: IndexSet){
+        offsets.forEach{index in
+            let recordVM = self.recordVM.records[index]
+            self.recordVM.deleteRecord(recordVM)
+        }
+    }
+    
     var body: some View {
         NavigationView{
             
             GeometryReader{ reader in
                 
-                VStack(spacing: 30){
-//                    ZStack(alignment: .topLeading){
-//                        RoundedRectangle(cornerRadius: 20)
-//                            .foregroundColor(.white)
-//                            .overlay(RoundedRectangle(cornerRadius: 20).stroke(Color.gray, lineWidth: 4))
-//
-//                        Text(self.data.isEmpty ? self.holder : self.data)
-//                            .foregroundColor(self.data.isEmpty ? .gray : .black)
-//                            .padding()
-//
-//                    }.frame(height: reader.size.height * 0.4)
+                VStack{
+                    List{
+                        ForEach(self.recordVM.records, id:\.input){ record in
+                            CardView(content: record.input)
+                        }.onDelete(perform: delete)
+                    }.background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                     
                     
-                    ScrollView(.vertical){
-                        ForEach(self.dataStock, id:\.self){ dailyData in
-                            CardView(content: dailyData)
-                        }
-                    }
-                    Text("\(self.readingData)")
                     
+                    //Read Button
                     nfcButton(data: self.$data, dataStock: self.$dataStock)
                         .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07, alignment: .center)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -58,6 +62,8 @@ struct ContentView: View {
                         .background(Color(.black))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
+                    
+                    
                     
                     
                     Spacer()
