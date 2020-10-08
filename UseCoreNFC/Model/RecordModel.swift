@@ -11,6 +11,7 @@ import Foundation
 struct RecordModel {
     var input: String
     
+    //CoreData Model --> Record
     init(record: Record) {
         self.input = record.input!
     }

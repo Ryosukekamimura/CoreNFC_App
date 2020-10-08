@@ -56,7 +56,7 @@ struct ContentView: View {
 //
                     
                     //Read Button
-                    nfcButton(data: self.$data, dataStock: self.$dataStock, isPresented: self.$isPresented)
+                    nfcButton(isPresented: self.$isPresented)
                         .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07, alignment: .center)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                         
