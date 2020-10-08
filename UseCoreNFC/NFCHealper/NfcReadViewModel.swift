@@ -17,6 +17,8 @@ struct nfcButton : UIViewRepresentable {
     
     @Binding var data : String
     @Binding var dataStock : [String]
+    @Binding var isPresented: Bool
+
     
     func makeUIView(context: UIViewRepresentableContext<nfcButton>) -> UIButton {
         let button = UIButton()
@@ -30,10 +32,12 @@ struct nfcButton : UIViewRepresentable {
         // do nothing
     }
     
+    
+    
     typealias UIViewType = UIButton
     
     func makeCoordinator() -> nfcButton.Coordinator {
-        return Coordinator(data: $data, dataStock: $dataStock)
+        return Coordinator(data: $data, dataStock: $dataStock, isPresented: $isPresented)
     }
     
     class Coordinator: NSObject, NFCNDEFReaderSessionDelegate{
@@ -43,9 +47,19 @@ struct nfcButton : UIViewRepresentable {
         @Binding var data : String
         @Binding var dataStock: [String]
         
-        init(data: Binding<String>, dataStock: Binding<[String]>) {
+        @State var addRecordVM = AddRecordViewModel()
+        @ObservedObject var recordVM: RecordViewModel = RecordViewModel()
+    
+        
+        var input_str : String = ""
+        
+        @Binding var isPresented: Bool
+        
+        init(data: Binding<String>, dataStock: Binding<[String]>, isPresented: Binding<Bool>) {
             _data = data
             _dataStock = dataStock
+            _isPresented = isPresented
+            
         }
         
         
@@ -86,9 +100,22 @@ struct nfcButton : UIViewRepresentable {
             
             
             print(payload)
-            self.data = payload
-            self.dataStock.append(self.data)
-            print("dataStock is \(self.dataStock)")
+            //self.data = payload
+            
+            
+            // dataStock をデータ永続化にする
+            addRecordVM.input = payload
+            
+//            self.dataStock.append(self.data)
+//            print("dataStock is \(self.dataStock)")
+//
+            
+            addRecordVM.saveRecord()
+            
+            self.recordVM.fetchAllRecords()
+            
+            isPresented.toggle()
+            
         }
         
         

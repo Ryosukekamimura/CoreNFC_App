@@ -43,7 +43,7 @@ class DateUtils {
     
     class func stringFromDateOnlyMinutes(date: Date) -> String {
         let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "m", options: 0, locale: Locale(identifier: "jp_JP"))
+        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "mm", options: 0, locale: Locale(identifier: "jp_JP"))
         return formatter.string(from: date)
     }
 }
