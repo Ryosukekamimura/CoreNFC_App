@@ -21,6 +21,8 @@ struct ContentView: View {
     
     @ObservedObject var recordVM : RecordViewModel
     
+    @State var isPresented: Bool = false
+    
     init() {
         self.recordVM = RecordViewModel()
     }
@@ -45,22 +47,30 @@ struct ContentView: View {
                     }.background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
                     
                     
+                    .sheet(isPresented: $isPresented, onDismiss: {
+                        print("onDismiss")
+                        self.recordVM.fetchAllRecords()
+                    }, content: {
+                        Text("Loading")
+                    })
+//
                     
                     //Read Button
-                    nfcButton(data: self.$data, dataStock: self.$dataStock)
+                    nfcButton(data: self.$data, dataStock: self.$dataStock, isPresented: self.$isPresented)
                         .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07, alignment: .center)
                         .clipShape(RoundedRectangle(cornerRadius: 20))
-                    
+                        
+                        
                     // Write Button
                     NavigationLink(destination: WriteView(isActive: self.$showWrite, data: self.$data, dataStock: self.$dataStock), isActive: self.$showWrite){
-                        Button(action: {
-                            self.showWrite.toggle()
-                        }, label: {
-                            Text("NFCに書き込み")
-                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
-                        }).foregroundColor(.white)
-                        .background(Color(.black))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                            Button(action: {
+                                self.showWrite.toggle()
+                            }, label: {
+                                Text("NFCに書き込み")
+                                    .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
+                            }).foregroundColor(.white)
+                            .background(Color(.black))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                     }
                     
                     

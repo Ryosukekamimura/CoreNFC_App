@@ -48,10 +48,6 @@ struct WriteView : View {
                     Text("Read")
                 })
             }
-            
-            nfcButton(data: self.$data, dataStock: self.$dataStock)
-                .frame(width: UIScreen.main.bounds.width / 2, height: 200)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
         }
         
     }

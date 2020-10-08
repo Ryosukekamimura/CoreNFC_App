@@ -8,7 +8,7 @@
 import Foundation
 
 
-class RecordModel {
+struct RecordModel {
     var input: String
     
     init(record: Record) {
