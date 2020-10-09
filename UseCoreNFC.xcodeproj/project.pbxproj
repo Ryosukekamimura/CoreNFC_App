@@ -14,7 +14,6 @@
 		92199FEF252E861800C6088B /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FEE252E861800C6088B /* RecordModel.swift */; };
 		92199FF4252E868C00C6088B /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FF3252E868C00C6088B /* RecordViewModel.swift */; };
 		92199FF9252E883000C6088B /* AddRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FF8252E883000C6088B /* AddRecordViewModel.swift */; };
-		92474D9A2526E7FA00DB6CBD /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474D992526E7FA00DB6CBD /* WriteView.swift */; };
 		92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */; };
 		92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */; };
 		92474DC02526EA9100DB6CBD /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DBF2526EA9100DB6CBD /* Payload.swift */; };
@@ -56,7 +55,6 @@
 		92199FEE252E861800C6088B /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		92199FF3252E868C00C6088B /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		92199FF8252E883000C6088B /* AddRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewModel.swift; sourceTree = "<group>"; };
-		92474D992526E7FA00DB6CBD /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 		92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcReadViewModel.swift; sourceTree = "<group>"; };
 		92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcWriteViewModel.swift; sourceTree = "<group>"; };
 		92474DBF2526EA9100DB6CBD /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
@@ -155,7 +153,6 @@
 			children = (
 				928D53F8252495AA004AB475 /* ContentView.swift */,
 				92FE4CAF2529A73F00589C2E /* CardView.swift */,
-				92474D992526E7FA00DB6CBD /* WriteView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,7 +374,6 @@
 				92199FDC252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift in Sources */,
 				92D45B76252BD01D00D96040 /* NFCReaderSession.swift in Sources */,
 				92199FCE252E79C100C6088B /* UseCoreNFC.xcdatamodeld in Sources */,
-				92474D9A2526E7FA00DB6CBD /* WriteView.swift in Sources */,
 				92199FEF252E861800C6088B /* RecordModel.swift in Sources */,
 				92474DC02526EA9100DB6CBD /* Payload.swift in Sources */,
 				92199FF9252E883000C6088B /* AddRecordViewModel.swift in Sources */,

@@ -11,10 +11,6 @@ import CoreNFC
 
 
 struct ContentView: View {
-    @State var data = ""
-    @State var showWrite = false
-    let holder = "記録がここに表示されます"
-    
     @State var dataStock: [String] = []
     
     @State var readingData: String = ""
@@ -34,12 +30,21 @@ struct ContentView: View {
         }
     }
     
+    var sessionWrite = NFCSessionWrite()
+    
     var body: some View {
-        NavigationView{
+        VStack{
             
+        
             GeometryReader{ reader in
                 
                 VStack{
+                    
+                    Text("ピッとたいむ")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1)))
+                        
                     List{
                         ForEach(self.recordVM.records, id:\.input){ record in
                             CardView(content: record.input)
@@ -51,36 +56,48 @@ struct ContentView: View {
                         print("onDismiss")
                         self.recordVM.fetchAllRecords()
                     }, content: {
-                        Text("Loading")
-                    })
-//
-                    
-                    //Read Button
-                    nfcButton(isPresented: self.$isPresented)
-                        .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07, alignment: .center)
+                        
+                        // Write Button
+                        Button(action: {
+                            self.sessionWrite.beginScanning()
+                        }, label: {
+                            Text("①書き込み")
+                                .font(.title)
+                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
+                        })
+                        .foregroundColor(.white)
+                        .background(Color(.black))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                        .padding()
                         
                         
-                    // Write Button
-                    NavigationLink(destination: WriteView(isActive: self.$showWrite, data: self.$data, dataStock: self.$dataStock), isActive: self.$showWrite){
-                            Button(action: {
-                                self.showWrite.toggle()
-                            }, label: {
-                                Text("NFCに書き込み")
-                                    .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
-                            }).foregroundColor(.white)
-                            .background(Color(.black))
+                        
+                        //Read Button
+                        nfcButton(isPresented: self.$isPresented)
+                            .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15, alignment: .center)
                             .clipShape(RoundedRectangle(cornerRadius: 20))
-                    }
+                        
+                        
+                        
+                    })
                     
                     
                     
-                    
-                    Spacer()
+                    Button(action: {
+                        isPresented.toggle()
+                    }, label: {
+                        Text("追加する")
+                            .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
+                    })
+                    .foregroundColor(.white)
+                    .background(Color(.black))
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                .navigationBarTitle("ピットTime ~時間管理ツール~", displayMode: .inline)
-                .padding(.top, 20)
+                
+                
             }
+            
+            Spacer()
         }
     }
 }

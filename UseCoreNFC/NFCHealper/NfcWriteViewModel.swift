@@ -13,17 +13,15 @@ import UIKit
 class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     
     var session : NFCNDEFReaderSession?
-    var message : String = ""
     
 
 
     
-    public func  beginScanning(message: String){
+    public func  beginScanning(){
         guard NFCNDEFReaderSession.readingAvailable else{
             print("スキャンに対応されていない機種です。申し訳ございません。")
             return
         }
-        self.message = message
         session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: false)
         session?.alertMessage = "データを書き込むのでNFCタグに近づけてください"
         session?.begin()
@@ -99,7 +97,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         format: .nfcWellKnown,
                         type: "T".data(using: .utf8)!,
                         identifier: "Text".data(using: .utf8)!,
-                        payload: self.message.data(using: .utf8)! + format_nowTime.data(using: .utf8)!
+                        payload: format_nowTime.data(using: .utf8)!
                     )
                     
                     print("\(format_nowTime)　フォーマットされた現在時刻を表示する")
