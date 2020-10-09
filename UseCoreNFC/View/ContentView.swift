@@ -35,7 +35,7 @@ struct ContentView: View {
     var body: some View {
         VStack{
             
-        
+            
             GeometryReader{ reader in
                 
                 VStack{
@@ -44,7 +44,7 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1)))
-                        
+                    
                     List{
                         ForEach(self.recordVM.records, id:\.input){ record in
                             CardView(content: record.input)
@@ -56,27 +56,38 @@ struct ContentView: View {
                         print("onDismiss")
                         self.recordVM.fetchAllRecords()
                     }, content: {
-                        
-                        // Write Button
-                        Button(action: {
-                            self.sessionWrite.beginScanning()
-                        }, label: {
-                            Text("①書き込み")
-                                .font(.title)
-                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
-                        })
-                        .foregroundColor(.white)
-                        .background(Color(.black))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                        .padding()
-                        
-                        
-                        
-                        //Read Button
-                        nfcButton(isPresented: self.$isPresented)
-                            .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15, alignment: .center)
+                        VStack{
+                            Text("あしあとを書きこみ、読み込んでください！")
+                                .font(.title2)
+                                .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1))).padding()
+                            Text("※あしあとを読みこんでいただけないとデータを反映することが出来ません(__)")
+                                .font(.title2)
+                                .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1)))
+                            
+                            
+                            
+                            // Write Button
+                            Button(action: {
+                                self.sessionWrite.beginScanning()
+                            }, label: {
+                                Text("①あしあとを書きこむ")
+                                    .font(.title)
+                                    .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
+                            })
+                            .foregroundColor(.white)
+                            .background(Color(.black))
                             .clipShape(RoundedRectangle(cornerRadius: 20))
-                        
+                            .padding()
+                            
+                            
+                            
+                            //Read Button
+                            nfcButton(isPresented: self.$isPresented)
+                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15, alignment: .center)
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                            
+                            
+                        }
                         
                         
                     })
@@ -86,7 +97,8 @@ struct ContentView: View {
                     Button(action: {
                         isPresented.toggle()
                     }, label: {
-                        Text("追加する")
+                        Image(systemName: "plus.circle")
+                            .font(.title)
                             .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
                     })
                     .foregroundColor(.white)
