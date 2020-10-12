@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		92199FCE252E79C100C6088B /* UseCoreNFC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92199FCC252E79C100C6088B /* UseCoreNFC.xcdatamodeld */; };
-		92199FD3252E7A6200C6088B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FD2252E7A6200C6088B /* DataManager.swift */; };
 		92199FDC252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FDB252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift */; };
 		92199FE5252E806400C6088B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FE4252E806400C6088B /* CoreDataManager.swift */; };
 		92199FEF252E861800C6088B /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FEE252E861800C6088B /* RecordModel.swift */; };
@@ -26,7 +25,6 @@
 		928D5401252495AB004AB475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928D53FF252495AB004AB475 /* LaunchScreen.storyboard */; };
 		928D540C252495AB004AB475 /* UseCoreNFCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D540B252495AB004AB475 /* UseCoreNFCTests.swift */; };
 		928D5417252495AB004AB475 /* UseCoreNFCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */; };
-		92D45B76252BD01D00D96040 /* NFCReaderSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D45B75252BD01D00D96040 /* NFCReaderSession.swift */; };
 		92FE4CB02529A73F00589C2E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE4CAF2529A73F00589C2E /* CardView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		92199FCD252E79C100C6088B /* UseCoreNFC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UseCoreNFC.xcdatamodel; sourceTree = "<group>"; };
-		92199FD2252E7A6200C6088B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		92199FDB252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		92199FE4252E806400C6088B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		92199FEE252E861800C6088B /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
@@ -76,7 +73,6 @@
 		928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCoreNFCUITests.swift; sourceTree = "<group>"; };
 		928D5418252495AB004AB475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928D542725253313004AB475 /* UseCoreNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UseCoreNFC.entitlements; sourceTree = "<group>"; };
-		92D45B75252BD01D00D96040 /* NFCReaderSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCReaderSession.swift; sourceTree = "<group>"; };
 		92FE4CAF2529A73F00589C2E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,7 +106,6 @@
 			children = (
 				92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */,
 				92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */,
-				92D45B75252BD01D00D96040 /* NFCReaderSession.swift */,
 				92474DBF2526EA9100DB6CBD /* Payload.swift */,
 			);
 			path = NFCHealper;
@@ -190,6 +185,7 @@
 		928D53F3252495AA004AB475 /* UseCoreNFC */ = {
 			isa = PBXGroup;
 			children = (
+				92EE9B1E25344DB50024D901 /* RecordViewModel */,
 				92199FED252E860800C6088B /* Model */,
 				92199FE3252E805600C6088B /* Managers */,
 				92199FDA252E7B5500C6088B /* Extensions */,
@@ -204,9 +200,6 @@
 				928D53FF252495AB004AB475 /* LaunchScreen.storyboard */,
 				928D5402252495AB004AB475 /* Info.plist */,
 				928D53FC252495AB004AB475 /* Preview Content */,
-				92199FD2252E7A6200C6088B /* DataManager.swift */,
-				92199FF3252E868C00C6088B /* RecordViewModel.swift */,
-				92199FF8252E883000C6088B /* AddRecordViewModel.swift */,
 			);
 			path = UseCoreNFC;
 			sourceTree = "<group>";
@@ -235,6 +228,15 @@
 				928D5418252495AB004AB475 /* Info.plist */,
 			);
 			path = UseCoreNFCUITests;
+			sourceTree = "<group>";
+		};
+		92EE9B1E25344DB50024D901 /* RecordViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92199FF3252E868C00C6088B /* RecordViewModel.swift */,
+				92199FF8252E883000C6088B /* AddRecordViewModel.swift */,
+			);
+			path = RecordViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,11 +370,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				92474DD02526F20000DB6CBD /* DateFormatter.swift in Sources */,
-				92199FD3252E7A6200C6088B /* DataManager.swift in Sources */,
 				92FE4CB02529A73F00589C2E /* CardView.swift in Sources */,
 				928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */,
 				92199FDC252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift in Sources */,
-				92D45B76252BD01D00D96040 /* NFCReaderSession.swift in Sources */,
 				92199FCE252E79C100C6088B /* UseCoreNFC.xcdatamodeld in Sources */,
 				92199FEF252E861800C6088B /* RecordModel.swift in Sources */,
 				92474DC02526EA9100DB6CBD /* Payload.swift in Sources */,

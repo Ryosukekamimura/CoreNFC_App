@@ -56,7 +56,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
         print("Get First tag!")
         session.connect(to: tag){ (error) in
             if error != nil {
-                session.alertMessage = "Unable to connect to tag."
+                session.alertMessage = "NFCタグに書き込むことが出来ませんでした。もう一度お試しください"
                 session.invalidate()
                 print("Error connect")
                 return
@@ -114,7 +114,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         } else {
                             
                             // to write
-                            session.alertMessage = "Write NDEF successful."
+                            session.alertMessage = "書き込むことに成功しました！"
                             print("Success write.")
                         }
                         session.invalidate()
