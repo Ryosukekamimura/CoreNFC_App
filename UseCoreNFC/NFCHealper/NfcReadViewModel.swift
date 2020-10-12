@@ -50,12 +50,12 @@ struct nfcButton : UIViewRepresentable {
         
         @objc func beginScan(_ sender: Any){
             guard NFCNDEFReaderSession.readingAvailable else {
-                print("error: Scanning not support")
+                print("申し訳ございません、対応していない機種です")
                 return
             }
             
             session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: true)
-            session?.alertMessage = "Hold your iphone near to scan."
+            session?.alertMessage = "デバイスを近づけてください"
             session?.begin()
         }
         
