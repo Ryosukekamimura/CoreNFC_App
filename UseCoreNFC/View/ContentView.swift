@@ -43,7 +43,7 @@ struct ContentView: View {
                     Text("ピッとたいむ")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1)))
+                        .foregroundColor(Color(#colorLiteral(red: 0.9137203097, green: 0.5255223513, blue: 0.5842515826, alpha: 1)))
                     
                     List{
                         ForEach(self.recordVM.records, id:\.input){ record in
@@ -75,7 +75,7 @@ struct ContentView: View {
                                     .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
                             })
                             .foregroundColor(.white)
-                            .background(Color(.black))
+                            .background(Color("black-pinkcolor"))
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding()
                             
@@ -84,16 +84,9 @@ struct ContentView: View {
                             //Read Button
                             nfcButton(isPresented: self.$isPresented)
                                 .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15, alignment: .center)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                            
-                            
+                                .clipShape(RoundedRectangle(cornerRadius: 20))   
                         }
-                        
-                        
                     })
-                    
-                    
-                    
                     Button(action: {
                         isPresented.toggle()
                     }, label: {
@@ -102,13 +95,10 @@ struct ContentView: View {
                             .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
                     })
                     .foregroundColor(.white)
-                    .background(Color(.black))
+                    .background(Color("black-pinkcolor"))
                     .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
-                
-                
             }
-            
             Spacer()
         }
     }
