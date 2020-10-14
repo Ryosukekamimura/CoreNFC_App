@@ -17,7 +17,7 @@ struct nfcButton : UIViewRepresentable {
         let button = UIButton()
         button.setTitle("②あしあとを読みこむ", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        button.backgroundColor = UIColor.black
+        button.backgroundColor = UIColor.init(named: "black-pinkcolor")
         button.addTarget(context.coordinator, action: #selector(context.coordinator.beginScan(_:)), for: .touchUpInside)
         return button
     }
