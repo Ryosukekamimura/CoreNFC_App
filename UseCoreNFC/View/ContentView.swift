@@ -7,7 +7,7 @@
 
 import SwiftUI
 import CoreNFC
-
+import SwiftUICharts
 
 
 struct ContentView: View {
@@ -44,6 +44,9 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color(#colorLiteral(red: 0.9137203097, green: 0.5255223513, blue: 0.5842515826, alpha: 1)))
+                    
+//                    LineView(data: [8,23,54,32,12,37,7,23,43])
+                    
                     
                     List{
                         ForEach(self.recordVM.records, id:\.input){ record in

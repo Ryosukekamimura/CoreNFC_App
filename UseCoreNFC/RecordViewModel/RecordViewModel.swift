@@ -7,7 +7,7 @@
 
 import Foundation
 import CoreData
-import Combine
+
 
 
 class RecordViewModel: ObservableObject {
@@ -24,6 +24,8 @@ class RecordViewModel: ObservableObject {
     
     func fetchAllRecords() {
         self.records = CoreDataManager.shared.getAllRecords().map(RecordModel.init)
-        print(self.records)
+        print("\(self.records)recordsはこれです")
     }
+    
+    
 }
