@@ -26,33 +26,34 @@ struct CardView: View {
     func minutes(content: String) -> String{
         return DateUtils.stringFromDateOnlyMinutes(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日 HH時mm分ss秒 Z"))
     }
-
+    
     var body: some View {
-        ZStack{
-            Rectangle()
-                .stroke(Color("black-pinkcolor"), lineWidth: 10)
-                .padding(10)
+
             HStack{
-                Text("\(month(content: content))")
+                Spacer()
+                Text("\(month(content: content))" + "\(day(content: content))日")
                     .foregroundColor(Color("black-pinkcolor"))
-                    .fontWeight(.bold)
-                    .padding(30)
-                Text("\(day(content: content))日")
+                    
+                Spacer()
+                HStack {
+                    Text("\(hour(content: content))時")
+                        .foregroundColor(Color("black-pinkcolor"))
+                        .bold()
+                    Text("\(minutes(content: content))分")
+                        .foregroundColor(Color("black-pinkcolor"))
+                        .bold()
+                }
+                Spacer()
                 
-                
-                Text("\(hour(content: content))時")
-                    .foregroundColor(Color("black-pinkcolor"))
-                    .font(.title)
-                    .padding([.all], 20)
-                    .cornerRadius(20)
-                Text("\(minutes(content: content))分")
             }.padding()
+            
         }
-    }
+    
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(content: "2020-10-1")
+        CardView(content: "2020年11月01日 07時52分42秒 +0900").previewLayout(.sizeThatFits)
+        
     }
 }
