@@ -28,8 +28,7 @@ class DateUtils {
     // String型のMonth　--> "09"
     class func stringFromDateOnlyMonth(date: Date) -> String{
         let formatter: DateFormatter = DateFormatter()
-        formatter.dateFormat = DateFormatter.dateFormat(fromTemplate: "MM", options: 0, locale: Locale(identifier: "ja_JP"))
-            
+        formatter.dateFormat = "MM"
         return formatter.string(from: date)
     }
     
