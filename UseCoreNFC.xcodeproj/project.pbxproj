@@ -13,7 +13,6 @@
 		92199FEF252E861800C6088B /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FEE252E861800C6088B /* RecordModel.swift */; };
 		92199FF4252E868C00C6088B /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FF3252E868C00C6088B /* RecordViewModel.swift */; };
 		92199FF9252E883000C6088B /* AddRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FF8252E883000C6088B /* AddRecordViewModel.swift */; };
-		92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */; };
 		92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */; };
 		92474DC02526EA9100DB6CBD /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DBF2526EA9100DB6CBD /* Payload.swift */; };
 		92474DD02526F20000DB6CBD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DCF2526F20000DB6CBD /* DateFormatter.swift */; };
@@ -53,7 +52,6 @@
 		92199FEE252E861800C6088B /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		92199FF3252E868C00C6088B /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		92199FF8252E883000C6088B /* AddRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewModel.swift; sourceTree = "<group>"; };
-		92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcReadViewModel.swift; sourceTree = "<group>"; };
 		92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcWriteViewModel.swift; sourceTree = "<group>"; };
 		92474DBF2526EA9100DB6CBD /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		92474DCF2526F20000DB6CBD /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 		92199FCA252E78FE00C6088B /* NFCHealper */ = {
 			isa = PBXGroup;
 			children = (
-				92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */,
 				92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */,
 				92474DBF2526EA9100DB6CBD /* Payload.swift */,
 			);
@@ -390,7 +387,6 @@
 				92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */,
 				928D53F9252495AA004AB475 /* ContentView.swift in Sources */,
 				92199FE5252E806400C6088B /* CoreDataManager.swift in Sources */,
-				92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

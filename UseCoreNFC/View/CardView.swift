@@ -28,26 +28,26 @@ struct CardView: View {
     }
     
     var body: some View {
-
+        
+        HStack{
+            Spacer()
             HStack{
                 Spacer()
-                Text("\(month(content: content))" + "\(day(content: content))日")
+                Text("\(month(content: content))" + "/" + "\(day(content: content))")
                     .foregroundColor(Color("black-pinkcolor"))
-                    
+                    .padding()
                 Spacer()
-                HStack {
-                    Text("\(hour(content: content))時")
-                        .foregroundColor(Color("black-pinkcolor"))
-                        .bold()
-                    Text("\(minutes(content: content))分")
-                        .foregroundColor(Color("black-pinkcolor"))
-                        .bold()
-                }
+                Text("\(hour(content: content)):" + "\(minutes(content: content))")
+                    .foregroundColor(Color("black-pinkcolor"))
+                    .bold()
                 Spacer()
-                
-            }.padding()
+            }.background(Color(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)))
             
-        }
+            Spacer()
+            
+        }.padding()
+        
+    }
     
 }
 

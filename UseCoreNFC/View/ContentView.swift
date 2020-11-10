@@ -7,7 +7,6 @@
 
 import SwiftUI
 import CoreNFC
-import SwiftUICharts
 
 
 struct ContentView: View {
@@ -18,6 +17,8 @@ struct ContentView: View {
     @ObservedObject var recordVM : RecordViewModel
     
     @State var isPresented: Bool = false
+    
+    var sessionWrite = NFCSessionWrite()
     
     init() {
         self.recordVM = RecordViewModel()
@@ -30,7 +31,7 @@ struct ContentView: View {
         }
     }
     
-    var sessionWrite = NFCSessionWrite()
+    
     
     var body: some View {
         VStack{
@@ -44,10 +45,6 @@ struct ContentView: View {
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(Color(#colorLiteral(red: 0.9137203097, green: 0.5255223513, blue: 0.5842515826, alpha: 1)))
-                    
-//                    LineView(data: [8,23,54,32,12,37,7,23,43])
-                    
-                    
                     List{
                         ForEach(self.recordVM.records, id:\.input){ record in
                             CardView(content: record.input)
@@ -58,20 +55,20 @@ struct ContentView: View {
                     .sheet(isPresented: $isPresented, onDismiss: {
                         print("onDismiss")
                         self.recordVM.fetchAllRecords()
+                        
                     }, content: {
                         VStack{
-                            Text("あしあとを書きこみ、読み込んでください！")
+                            Text("あしあとを書きこみましよう！")
                                 .font(.title2)
                                 .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1))).padding()
-                            Text("※あしあとを読みこんでいただけないとデータを反映することが出来ません(__)")
-                                .font(.title2)
-                                .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1)))
+
                             
                             
                             
                             // Write Button
                             Button(action: {
                                 self.sessionWrite.beginScanning()
+                                isPresented.toggle()
                             }, label: {
                                 Text("①あしあとを書きこむ")
                                     .font(.title)
@@ -81,13 +78,6 @@ struct ContentView: View {
                             .background(Color("black-pinkcolor"))
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding()
-                            
-                            
-                            
-                            //Read Button
-                            nfcButton(isPresented: self.$isPresented)
-                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15, alignment: .center)
-                                .clipShape(RoundedRectangle(cornerRadius: 20))   
                         }
                     })
                     Button(action: {
