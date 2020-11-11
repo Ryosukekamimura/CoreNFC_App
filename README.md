@@ -1,6 +1,6 @@
 # ピッとたいむ
 <br/>
-[個人開発]
+**[個人開発]**
 <br/>
 <br/>
 
@@ -13,8 +13,9 @@
 **役割:** すべて
 <br/>
 <br/>
-**Github URL:** https://github.com/Ryosukekamimura/CoreNFC_App
+**App Store** https://apps.apple.com/us/app/%E3%83%94%E3%83%83%E3%81%A8%E3%81%9F%E3%81%84%E3%82%80/id1535130388
 <br/>
+
 <br/>
 **開発する上で大変だったこと:**
 <br/>
@@ -38,8 +39,7 @@
 現在のアプリでは自己完結してしまっているので、多くのユーザーと繋がり、お互いに相乗効果が生まれるような構図にしたいと考えております。
 <br/>
 <br/>
-リリースしました！
-https://apps.apple.com/us/app/%E3%83%94%E3%83%83%E3%81%A8%E3%81%9F%E3%81%84%E3%82%80/id1535130388
+
 
 <p text-align="center">
   <img src="https://user-images.githubusercontent.com/52638834/95674700-e493a200-0bec-11eb-984f-3db0a9febfe0.png" width="300">
