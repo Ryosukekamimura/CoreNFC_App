@@ -12,7 +12,7 @@
 **役割:** すべて
 
 
-**AppStore**
+**AppStore:**
 
 <https://apps.apple.com/us/app/%E3%83%94%E3%83%83%E3%81%A8%E3%81%9F%E3%81%84%E3%82%80/id1535130388>
 
