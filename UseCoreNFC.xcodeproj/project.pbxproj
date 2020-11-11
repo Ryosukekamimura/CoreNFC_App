@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,10 +13,10 @@
 		92199FEF252E861800C6088B /* RecordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FEE252E861800C6088B /* RecordModel.swift */; };
 		92199FF4252E868C00C6088B /* RecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FF3252E868C00C6088B /* RecordViewModel.swift */; };
 		92199FF9252E883000C6088B /* AddRecordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FF8252E883000C6088B /* AddRecordViewModel.swift */; };
-		92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */; };
 		92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */; };
 		92474DC02526EA9100DB6CBD /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DBF2526EA9100DB6CBD /* Payload.swift */; };
 		92474DD02526F20000DB6CBD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DCF2526F20000DB6CBD /* DateFormatter.swift */; };
+		9269E75325392A1A00671C67 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9269E75225392A1A00671C67 /* SwiftUICharts */; };
 		928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F4252495AA004AB475 /* AppDelegate.swift */; };
 		928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F6252495AA004AB475 /* SceneDelegate.swift */; };
 		928D53F9252495AA004AB475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F8252495AA004AB475 /* ContentView.swift */; };
@@ -52,7 +52,6 @@
 		92199FEE252E861800C6088B /* RecordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordModel.swift; sourceTree = "<group>"; };
 		92199FF3252E868C00C6088B /* RecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewModel.swift; sourceTree = "<group>"; };
 		92199FF8252E883000C6088B /* AddRecordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordViewModel.swift; sourceTree = "<group>"; };
-		92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcReadViewModel.swift; sourceTree = "<group>"; };
 		92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcWriteViewModel.swift; sourceTree = "<group>"; };
 		92474DBF2526EA9100DB6CBD /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		92474DCF2526F20000DB6CBD /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9269E75325392A1A00671C67 /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,7 +104,6 @@
 		92199FCA252E78FE00C6088B /* NFCHealper */ = {
 			isa = PBXGroup;
 			children = (
-				92474DA42526E9CC00DB6CBD /* NfcReadViewModel.swift */,
 				92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */,
 				92474DBF2526EA9100DB6CBD /* Payload.swift */,
 			);
@@ -255,6 +254,9 @@
 			dependencies = (
 			);
 			name = UseCoreNFC;
+			packageProductDependencies = (
+				9269E75225392A1A00671C67 /* SwiftUICharts */,
+			);
 			productName = UseCoreNFC;
 			productReference = 928D53F1252495AA004AB475 /* UseCoreNFC.app */;
 			productType = "com.apple.product-type.application";
@@ -326,6 +328,9 @@
 				Base,
 			);
 			mainGroup = 928D53E8252495AA004AB475;
+			packageReferences = (
+				9269E75125392A1A00671C67 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 928D53F2252495AA004AB475 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,7 +387,6 @@
 				92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */,
 				928D53F9252495AA004AB475 /* ContentView.swift in Sources */,
 				92199FE5252E806400C6088B /* CoreDataManager.swift in Sources */,
-				92474DA52526E9CC00DB6CBD /* NfcReadViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,6 +721,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9269E75125392A1A00671C67 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9269E75225392A1A00671C67 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9269E75125392A1A00671C67 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		92199FCC252E79C100C6088B /* UseCoreNFC.xcdatamodeld */ = {
