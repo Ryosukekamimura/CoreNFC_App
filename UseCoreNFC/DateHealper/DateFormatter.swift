@@ -56,7 +56,10 @@ class DateUtils {
         }else{
             return minutes
         }
-            
-        //return formatter.string(from: date)
+    }
+    
+    class func HourFromTotalMunutes(date: Date) -> Int{
+        let minutes = Int(date.timeIntervalSince1970) % (24*60*60) / 60
+        return minutes / 60
     }
 }
