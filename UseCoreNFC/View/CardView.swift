@@ -27,11 +27,18 @@ struct CardView: View {
         return DateUtils.stringFromDateOnlyMinutes(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日 HH時mm分ss秒 Z"))
     }
     
+    func intHour(content: String) -> Int{
+        print("intHour = \(DateUtils.HourFromTotalMunutes(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日HH時mm分ss秒 Z")))")
+        return DateUtils.HourFromTotalMunutes(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日HH時mm分ss秒 Z"))
+    }
+    
     var body: some View {
         
         HStack{
             Spacer()
             HStack{
+                Spacer()
+                Image(systemName: "sun.max.fill")
                 Spacer()
                 Text("\(month(content: content))" + "/" + "\(day(content: content))")
                     .foregroundColor(Color("black-pinkcolor"))
@@ -41,11 +48,11 @@ struct CardView: View {
                     .foregroundColor(Color("black-pinkcolor"))
                     .bold()
                 Spacer()
-            }.background(Color(#colorLiteral(red: 0.9994240403, green: 0.9855536819, blue: 0, alpha: 1)))
+            }.background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
             
-            Spacer()
+            Spacer()    
             
-        }.padding()
+        }.background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
         
     }
     

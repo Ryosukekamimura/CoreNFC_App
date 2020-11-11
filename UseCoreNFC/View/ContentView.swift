@@ -34,66 +34,77 @@ struct ContentView: View {
     
     
     var body: some View {
-        VStack{
+        ZStack{
+            Color("list-background-color")
+                .edgesIgnoringSafeArea(.all)
             
-            
-            GeometryReader{ reader in
+            VStack{
                 
-                VStack{
+                
+                GeometryReader{ reader in
                     
-                    Text("ピッとたいむ")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(#colorLiteral(red: 0.9137203097, green: 0.5255223513, blue: 0.5842515826, alpha: 1)))
-                    List{
-                        ForEach(self.recordVM.records, id:\.input){ record in
-                            CardView(content: record.input)
-                        }.onDelete(perform: delete)
-                    }.background(Color(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)))
-                    
-                    
-                    .sheet(isPresented: $isPresented, onDismiss: {
-                        print("onDismiss")
-                        self.recordVM.fetchAllRecords()
+                    VStack{
                         
-                    }, content: {
-                        VStack{
-                            Text("あしあとを書きこみましよう！")
-                                .font(.title2)
-                                .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1))).padding()
-
-                            
-                            
-                            
-                            // Write Button
-                            Button(action: {
-                                self.sessionWrite.beginScanning()
-                                isPresented.toggle()
-                            }, label: {
-                                Text("①あしあとを書きこむ")
-                                    .font(.title)
-                                    .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
-                            })
-                            .foregroundColor(.white)
-                            .background(Color("black-pinkcolor"))
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                            .padding()
-                        }
-                    })
-                    Button(action: {
-                        isPresented.toggle()
-                    }, label: {
-                        Image(systemName: "plus.circle")
+                        Text("ピッとたいむ")
                             .font(.title)
-                            .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
-                    })
-                    .foregroundColor(.white)
-                    .background(Color("black-pinkcolor"))
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .fontWeight(.bold)
+                            .foregroundColor(Color("title-color"))
+                        List{
+                            ForEach(self.recordVM.records, id:\.input){ record in
+                                CardView(content: record.input)
+                                    .listRowBackground(Color("listrow-background-color"))
+                                    .shadow(radius: 20)
+                                    .padding()
+                            }.onDelete(perform: delete)
+                            
+                        }
+                        
+                        
+                        
+                        .sheet(isPresented: $isPresented, onDismiss: {
+                            print("onDismiss")
+                            self.recordVM.fetchAllRecords()
+                        }, content: {
+                            VStack{
+                                Text("あしあとを書きこみましよう！")
+                                    .font(.title2)
+                                    .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1))).padding()
+                                
+                                
+                                
+                                
+                                // Write Button
+                                Button(action: {
+                                    self.sessionWrite.beginScanning()
+
+                                }, label: {
+                                    Text("①あしあとを書きこむ")
+                                        .font(.title)
+                                        .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
+                                })
+                                .foregroundColor(.white)
+                                .background(Color("black-pinkcolor"))
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                                .padding()
+                            }
+                        })
+                        
+                        Button(action: {
+                            isPresented.toggle()
+                        }, label: {
+                            Image(systemName: "plus.circle")
+                                .font(.title)
+                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
+                        })
+                        .foregroundColor(.white)
+                        .background(Color("black-pinkcolor"))
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                    }
                 }
+                Spacer()
             }
-            Spacer()
         }
+        
     }
 }
 
