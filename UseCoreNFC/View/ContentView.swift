@@ -39,12 +39,8 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack{
-                
-                
                 GeometryReader{ reader in
-                    
                     VStack{
-                        
                         Text("ピッとたいむ")
                             .font(.title)
                             .fontWeight(.bold)
@@ -56,11 +52,7 @@ struct ContentView: View {
                                     .shadow(radius: 20)
                                     .padding()
                             }.onDelete(perform: delete)
-                            
                         }
-                        
-                        
-                        
                         .sheet(isPresented: $isPresented, onDismiss: {
                             print("onDismiss")
                             self.recordVM.fetchAllRecords()
@@ -71,12 +63,10 @@ struct ContentView: View {
                                     .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1))).padding()
                                 
                                 
-                                
-                                
                                 // Write Button
                                 Button(action: {
                                     self.sessionWrite.beginScanning()
-
+                                    
                                 }, label: {
                                     Text("①あしあとを書きこむ")
                                         .font(.title)
@@ -89,16 +79,25 @@ struct ContentView: View {
                             }
                         })
                         
-                        Button(action: {
-                            isPresented.toggle()
-                        }, label: {
-                            Image(systemName: "plus.circle")
-                                .font(.title)
-                                .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
-                        })
-                        .foregroundColor(.white)
-                        .background(Color("black-pinkcolor"))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                        HStack{
+                            Button(action: {
+                                isPresented.toggle()
+                            }, label: {
+                                Image(systemName: "plus.circle")
+                                    .font(.title)
+                                    .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.07)
+                            })
+                            .foregroundColor(.white)
+                            .background(Color("black-pinkcolor"))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            
+                            
+                            Button(action: {
+                                
+                            }, label: {
+                                Text("++")
+                            })
+                        }
                     }
                 }
                 Spacer()

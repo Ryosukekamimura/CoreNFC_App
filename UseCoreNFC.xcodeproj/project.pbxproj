@@ -18,7 +18,7 @@
 		92474DAA2526EA3300DB6CBD /* NfcWriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */; };
 		92474DC02526EA9100DB6CBD /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DBF2526EA9100DB6CBD /* Payload.swift */; };
 		92474DD02526F20000DB6CBD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DCF2526F20000DB6CBD /* DateFormatter.swift */; };
-		9269E75325392A1A00671C67 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 9269E75225392A1A00671C67 /* SwiftPackageProductDependency */; };
+		9269E75325392A1A00671C67 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9269E75225392A1A00671C67 /* SwiftUICharts */; };
 		928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F4252495AA004AB475 /* AppDelegate.swift */; };
 		928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F6252495AA004AB475 /* SceneDelegate.swift */; };
 		928D53F9252495AA004AB475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F8252495AA004AB475 /* ContentView.swift */; };
@@ -28,6 +28,7 @@
 		928D540C252495AB004AB475 /* UseCoreNFCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D540B252495AB004AB475 /* UseCoreNFCTests.swift */; };
 		928D5417252495AB004AB475 /* UseCoreNFCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */; };
 		92F05CB9255CAF2C00CD4C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F05CB8255CAF2C00CD4C5D /* GoogleService-Info.plist */; };
+		92F05CD2255CB40D00CD4C5D /* CloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F05CD1255CB40D00CD4C5D /* CloudFirestore.swift */; };
 		92FE4CB02529A73F00589C2E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE4CAF2529A73F00589C2E /* CardView.swift */; };
 		AE481C0944460FAA9B83CD8C /* Pods_UseCoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D361271D10D6B83B2731837D /* Pods_UseCoreNFC.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,7 @@
 		928D5418252495AB004AB475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928D542725253313004AB475 /* UseCoreNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UseCoreNFC.entitlements; sourceTree = "<group>"; };
 		92F05CB8255CAF2C00CD4C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		92F05CD1255CB40D00CD4C5D /* CloudFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFirestore.swift; sourceTree = "<group>"; };
 		92FE4CAF2529A73F00589C2E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9649575EBB6468C70C6998E5 /* Pods-UseCoreNFC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFC.release.xcconfig"; path = "Target Support Files/Pods-UseCoreNFC/Pods-UseCoreNFC.release.xcconfig"; sourceTree = "<group>"; };
 		D361271D10D6B83B2731837D /* Pods_UseCoreNFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseCoreNFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9269E75325392A1A00671C67 /* BuildFile in Frameworks */,
+				9269E75325392A1A00671C67 /* SwiftUICharts in Frameworks */,
 				AE481C0944460FAA9B83CD8C /* Pods_UseCoreNFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +130,6 @@
 				43F57393BAAC4914AAA4E054 /* Pods-UseCoreNFCTests.debug.xcconfig */,
 				4CF41C43F8B2EBAE266C66CC /* Pods-UseCoreNFCTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,6 +220,7 @@
 		928D53F3252495AA004AB475 /* UseCoreNFC */ = {
 			isa = PBXGroup;
 			children = (
+				92F05CCF255CB3C300CD4C5D /* Firebase */,
 				92EE9B1E25344DB50024D901 /* RecordViewModel */,
 				92199FED252E860800C6088B /* Model */,
 				92199FE3252E805600C6088B /* Managers */,
@@ -274,6 +276,22 @@
 			path = RecordViewModel;
 			sourceTree = "<group>";
 		};
+		92F05CCF255CB3C300CD4C5D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				92F05CD0255CB3CE00CD4C5D /* CloudFirestore */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		92F05CD0255CB3CE00CD4C5D /* CloudFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				92F05CD1255CB40D00CD4C5D /* CloudFirestore.swift */,
+			);
+			path = CloudFirestore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -293,7 +311,7 @@
 			);
 			name = UseCoreNFC;
 			packageProductDependencies = (
-				9269E75225392A1A00671C67 /* SwiftPackageProductDependency */,
+				9269E75225392A1A00671C67 /* SwiftUICharts */,
 			);
 			productName = UseCoreNFC;
 			productReference = 928D53F1252495AA004AB475 /* UseCoreNFC.app */;
@@ -370,7 +388,7 @@
 			);
 			mainGroup = 928D53E8252495AA004AB475;
 			packageReferences = (
-				9269E75125392A1A00671C67 /* RemoteSwiftPackageReference */,
+				9269E75125392A1A00671C67 /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = 928D53F2252495AA004AB475 /* Products */;
 			projectDirPath = "";
@@ -526,6 +544,7 @@
 				92199FCE252E79C100C6088B /* UseCoreNFC.xcdatamodeld in Sources */,
 				92199FEF252E861800C6088B /* RecordModel.swift in Sources */,
 				92474DC02526EA9100DB6CBD /* Payload.swift in Sources */,
+				92F05CD2255CB40D00CD4C5D /* CloudFirestore.swift in Sources */,
 				92199FF9252E883000C6088B /* AddRecordViewModel.swift in Sources */,
 				928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */,
 				92199FF4252E868C00C6088B /* RecordViewModel.swift in Sources */,
@@ -874,7 +893,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		9269E75125392A1A00671C67 /* RemoteSwiftPackageReference */ = {
+		9269E75125392A1A00671C67 /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
@@ -885,9 +904,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9269E75225392A1A00671C67 /* SwiftPackageProductDependency */ = {
+		9269E75225392A1A00671C67 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9269E75125392A1A00671C67 /* RemoteSwiftPackageReference */;
+			package = 9269E75125392A1A00671C67 /* XCRemoteSwiftPackageReference "ChartView" */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

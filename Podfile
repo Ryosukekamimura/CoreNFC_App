@@ -7,7 +7,9 @@ target 'UseCoreNFC' do
 
   # Pods for UseCoreNFC
   pod 'Firebase/Database'  
-
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  pod 'Firebase/Analytics'
 
 
   target 'UseCoreNFCTests' do
