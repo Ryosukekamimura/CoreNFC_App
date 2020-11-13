@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05E062BA4C4F0CEB80FFE468 /* Pods_UseCoreNFCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5479D552ECA4F17EE7382654 /* Pods_UseCoreNFCTests.framework */; };
+		49090F9E050BA225995991F8 /* Pods_UseCoreNFC_UseCoreNFCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46B72981DA6FD695FC32CAA /* Pods_UseCoreNFC_UseCoreNFCUITests.framework */; };
 		92199FCE252E79C100C6088B /* UseCoreNFC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92199FCC252E79C100C6088B /* UseCoreNFC.xcdatamodeld */; };
 		92199FDC252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FDB252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift */; };
 		92199FE5252E806400C6088B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92199FE4252E806400C6088B /* CoreDataManager.swift */; };
@@ -25,7 +27,10 @@
 		928D5401252495AB004AB475 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 928D53FF252495AB004AB475 /* LaunchScreen.storyboard */; };
 		928D540C252495AB004AB475 /* UseCoreNFCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D540B252495AB004AB475 /* UseCoreNFCTests.swift */; };
 		928D5417252495AB004AB475 /* UseCoreNFCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */; };
+		92F05CB9255CAF2C00CD4C5D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 92F05CB8255CAF2C00CD4C5D /* GoogleService-Info.plist */; };
+		92F05CD2255CB40D00CD4C5D /* CloudFirestore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F05CD1255CB40D00CD4C5D /* CloudFirestore.swift */; };
 		92FE4CB02529A73F00589C2E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FE4CAF2529A73F00589C2E /* CardView.swift */; };
+		AE481C0944460FAA9B83CD8C /* Pods_UseCoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D361271D10D6B83B2731837D /* Pods_UseCoreNFC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BDCF754765C9BB55AE52333 /* Pods-UseCoreNFC-UseCoreNFCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFC-UseCoreNFCUITests.debug.xcconfig"; path = "Target Support Files/Pods-UseCoreNFC-UseCoreNFCUITests/Pods-UseCoreNFC-UseCoreNFCUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1ECFD2AC7A7701057ACED8BB /* Pods-UseCoreNFC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFC.debug.xcconfig"; path = "Target Support Files/Pods-UseCoreNFC/Pods-UseCoreNFC.debug.xcconfig"; sourceTree = "<group>"; };
+		43F57393BAAC4914AAA4E054 /* Pods-UseCoreNFCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFCTests.debug.xcconfig"; path = "Target Support Files/Pods-UseCoreNFCTests/Pods-UseCoreNFCTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4CF41C43F8B2EBAE266C66CC /* Pods-UseCoreNFCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFCTests.release.xcconfig"; path = "Target Support Files/Pods-UseCoreNFCTests/Pods-UseCoreNFCTests.release.xcconfig"; sourceTree = "<group>"; };
+		5479D552ECA4F17EE7382654 /* Pods_UseCoreNFCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseCoreNFCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92199FCD252E79C100C6088B /* UseCoreNFC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UseCoreNFC.xcdatamodel; sourceTree = "<group>"; };
 		92199FDB252E7C5400C6088B /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		92199FE4252E806400C6088B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -72,7 +82,13 @@
 		928D5416252495AB004AB475 /* UseCoreNFCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCoreNFCUITests.swift; sourceTree = "<group>"; };
 		928D5418252495AB004AB475 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928D542725253313004AB475 /* UseCoreNFC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UseCoreNFC.entitlements; sourceTree = "<group>"; };
+		92F05CB8255CAF2C00CD4C5D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		92F05CD1255CB40D00CD4C5D /* CloudFirestore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudFirestore.swift; sourceTree = "<group>"; };
 		92FE4CAF2529A73F00589C2E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		9649575EBB6468C70C6998E5 /* Pods-UseCoreNFC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFC.release.xcconfig"; path = "Target Support Files/Pods-UseCoreNFC/Pods-UseCoreNFC.release.xcconfig"; sourceTree = "<group>"; };
+		D361271D10D6B83B2731837D /* Pods_UseCoreNFC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseCoreNFC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46B72981DA6FD695FC32CAA /* Pods_UseCoreNFC_UseCoreNFCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UseCoreNFC_UseCoreNFCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5D2159C0B4146CFB55CCB25 /* Pods-UseCoreNFC-UseCoreNFCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCoreNFC-UseCoreNFCUITests.release.xcconfig"; path = "Target Support Files/Pods-UseCoreNFC-UseCoreNFCUITests/Pods-UseCoreNFC-UseCoreNFCUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +97,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9269E75325392A1A00671C67 /* SwiftUICharts in Frameworks */,
+				AE481C0944460FAA9B83CD8C /* Pods_UseCoreNFC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E062BA4C4F0CEB80FFE468 /* Pods_UseCoreNFCTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,12 +113,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49090F9E050BA225995991F8 /* Pods_UseCoreNFC_UseCoreNFCUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		286ABE589AC277FAFD787E27 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1ECFD2AC7A7701057ACED8BB /* Pods-UseCoreNFC.debug.xcconfig */,
+				9649575EBB6468C70C6998E5 /* Pods-UseCoreNFC.release.xcconfig */,
+				0BDCF754765C9BB55AE52333 /* Pods-UseCoreNFC-UseCoreNFCUITests.debug.xcconfig */,
+				D5D2159C0B4146CFB55CCB25 /* Pods-UseCoreNFC-UseCoreNFCUITests.release.xcconfig */,
+				43F57393BAAC4914AAA4E054 /* Pods-UseCoreNFCTests.debug.xcconfig */,
+				4CF41C43F8B2EBAE266C66CC /* Pods-UseCoreNFCTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		92199FCA252E78FE00C6088B /* NFCHealper */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +188,9 @@
 			children = (
 				92854F12252DD4B0003F4CBE /* Realm.framework */,
 				92854F11252DD4B0003F4CBE /* RealmSwift.framework */,
+				D361271D10D6B83B2731837D /* Pods_UseCoreNFC.framework */,
+				D46B72981DA6FD695FC32CAA /* Pods_UseCoreNFC_UseCoreNFCUITests.framework */,
+				5479D552ECA4F17EE7382654 /* Pods_UseCoreNFCTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -168,6 +203,7 @@
 				928D5415252495AB004AB475 /* UseCoreNFCUITests */,
 				928D53F2252495AA004AB475 /* Products */,
 				92854F10252DD4B0003F4CBE /* Frameworks */,
+				286ABE589AC277FAFD787E27 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +220,7 @@
 		928D53F3252495AA004AB475 /* UseCoreNFC */ = {
 			isa = PBXGroup;
 			children = (
+				92F05CCF255CB3C300CD4C5D /* Firebase */,
 				92EE9B1E25344DB50024D901 /* RecordViewModel */,
 				92199FED252E860800C6088B /* Model */,
 				92199FE3252E805600C6088B /* Managers */,
@@ -194,6 +231,7 @@
 				928D542725253313004AB475 /* UseCoreNFC.entitlements */,
 				92199FCC252E79C100C6088B /* UseCoreNFC.xcdatamodeld */,
 				928D53F4252495AA004AB475 /* AppDelegate.swift */,
+				92F05CB8255CAF2C00CD4C5D /* GoogleService-Info.plist */,
 				928D53F6252495AA004AB475 /* SceneDelegate.swift */,
 				928D53FA252495AB004AB475 /* Assets.xcassets */,
 				928D53FF252495AB004AB475 /* LaunchScreen.storyboard */,
@@ -238,6 +276,22 @@
 			path = RecordViewModel;
 			sourceTree = "<group>";
 		};
+		92F05CCF255CB3C300CD4C5D /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				92F05CD0255CB3CE00CD4C5D /* CloudFirestore */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		92F05CD0255CB3CE00CD4C5D /* CloudFirestore */ = {
+			isa = PBXGroup;
+			children = (
+				92F05CD1255CB40D00CD4C5D /* CloudFirestore.swift */,
+			);
+			path = CloudFirestore;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,9 +299,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 928D541B252495AB004AB475 /* Build configuration list for PBXNativeTarget "UseCoreNFC" */;
 			buildPhases = (
+				556BA9379E21EF39DD3613BF /* [CP] Check Pods Manifest.lock */,
 				928D53ED252495AA004AB475 /* Sources */,
 				928D53EE252495AA004AB475 /* Frameworks */,
 				928D53EF252495AA004AB475 /* Resources */,
+				76EAA4BB15F97C3386B80FB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +321,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 928D541E252495AB004AB475 /* Build configuration list for PBXNativeTarget "UseCoreNFCTests" */;
 			buildPhases = (
+				6EBA3C5264E0232F857195AD /* [CP] Check Pods Manifest.lock */,
 				928D5403252495AB004AB475 /* Sources */,
 				928D5404252495AB004AB475 /* Frameworks */,
 				928D5405252495AB004AB475 /* Resources */,
@@ -283,9 +340,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 928D5421252495AB004AB475 /* Build configuration list for PBXNativeTarget "UseCoreNFCUITests" */;
 			buildPhases = (
+				FAF0DFE4E92230F5169C28E2 /* [CP] Check Pods Manifest.lock */,
 				928D540E252495AB004AB475 /* Sources */,
 				928D540F252495AB004AB475 /* Frameworks */,
 				928D5410252495AB004AB475 /* Resources */,
+				E29713EE873350BE692F6D04 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -348,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				928D5401252495AB004AB475 /* LaunchScreen.storyboard in Resources */,
+				92F05CB9255CAF2C00CD4C5D /* GoogleService-Info.plist in Resources */,
 				928D53FE252495AB004AB475 /* Preview Assets.xcassets in Resources */,
 				928D53FB252495AB004AB475 /* Assets.xcassets in Resources */,
 			);
@@ -369,6 +429,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		556BA9379E21EF39DD3613BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UseCoreNFC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EBA3C5264E0232F857195AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UseCoreNFCTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76EAA4BB15F97C3386B80FB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseCoreNFC/Pods-UseCoreNFC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseCoreNFC/Pods-UseCoreNFC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UseCoreNFC/Pods-UseCoreNFC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E29713EE873350BE692F6D04 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseCoreNFC-UseCoreNFCUITests/Pods-UseCoreNFC-UseCoreNFCUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UseCoreNFC-UseCoreNFCUITests/Pods-UseCoreNFC-UseCoreNFCUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UseCoreNFC-UseCoreNFCUITests/Pods-UseCoreNFC-UseCoreNFCUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF0DFE4E92230F5169C28E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UseCoreNFC-UseCoreNFCUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		928D53ED252495AA004AB475 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -381,6 +544,7 @@
 				92199FCE252E79C100C6088B /* UseCoreNFC.xcdatamodeld in Sources */,
 				92199FEF252E861800C6088B /* RecordModel.swift in Sources */,
 				92474DC02526EA9100DB6CBD /* Payload.swift in Sources */,
+				92F05CD2255CB40D00CD4C5D /* CloudFirestore.swift in Sources */,
 				92199FF9252E883000C6088B /* AddRecordViewModel.swift in Sources */,
 				928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */,
 				92199FF4252E868C00C6088B /* RecordViewModel.swift in Sources */,
@@ -551,6 +715,7 @@
 		};
 		928D541C252495AB004AB475 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ECFD2AC7A7701057ACED8BB /* Pods-UseCoreNFC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -565,7 +730,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				MARKETING_VERSION = 1.0.2;
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamimura.UseCoreNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -575,6 +742,7 @@
 		};
 		928D541D252495AB004AB475 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9649575EBB6468C70C6998E5 /* Pods-UseCoreNFC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -589,7 +757,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				MARKETING_VERSION = 1.0.2;
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.kamimura.UseCoreNFC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -599,6 +769,7 @@
 		};
 		928D541F252495AB004AB475 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43F57393BAAC4914AAA4E054 /* Pods-UseCoreNFCTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -621,6 +792,7 @@
 		};
 		928D5420252495AB004AB475 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF41C43F8B2EBAE266C66CC /* Pods-UseCoreNFCTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -643,6 +815,7 @@
 		};
 		928D5422252495AB004AB475 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BDCF754765C9BB55AE52333 /* Pods-UseCoreNFC-UseCoreNFCUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
@@ -663,6 +836,7 @@
 		};
 		928D5423252495AB004AB475 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5D2159C0B4146CFB55CCB25 /* Pods-UseCoreNFC-UseCoreNFCUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
