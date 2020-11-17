@@ -19,6 +19,7 @@
 		92474DC02526EA9100DB6CBD /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DBF2526EA9100DB6CBD /* Payload.swift */; };
 		92474DD02526F20000DB6CBD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92474DCF2526F20000DB6CBD /* DateFormatter.swift */; };
 		9269E75325392A1A00671C67 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 9269E75225392A1A00671C67 /* SwiftUICharts */; };
+		92836E3425637EDB00A37DBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92836E3325637EDB00A37DBC /* LaunchScreen.storyboard */; };
 		928D53F5252495AA004AB475 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F4252495AA004AB475 /* AppDelegate.swift */; };
 		928D53F7252495AA004AB475 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F6252495AA004AB475 /* SceneDelegate.swift */; };
 		928D53F9252495AA004AB475 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D53F8252495AA004AB475 /* ContentView.swift */; };
@@ -65,6 +66,7 @@
 		92474DA92526EA3300DB6CBD /* NfcWriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NfcWriteViewModel.swift; sourceTree = "<group>"; };
 		92474DBF2526EA9100DB6CBD /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		92474DCF2526F20000DB6CBD /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		92836E3325637EDB00A37DBC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92854F11252DD4B0003F4CBE /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Downloads/realm-swift-5.4.8/ios/swift-12.0/RealmSwift.framework"; sourceTree = "<group>"; };
 		92854F12252DD4B0003F4CBE /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Downloads/realm-swift-5.4.8/ios/swift-12.0/Realm.framework"; sourceTree = "<group>"; };
 		928D53F1252495AA004AB475 /* UseCoreNFC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UseCoreNFC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +239,7 @@
 				928D53FF252495AB004AB475 /* LaunchScreen.storyboard */,
 				928D5402252495AB004AB475 /* Info.plist */,
 				928D53FC252495AB004AB475 /* Preview Content */,
+				92836E3325637EDB00A37DBC /* LaunchScreen.storyboard */,
 			);
 			path = UseCoreNFC;
 			sourceTree = "<group>";
@@ -407,9 +410,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				928D5401252495AB004AB475 /* LaunchScreen.storyboard in Resources */,
-				92F05CB9255CAF2C00CD4C5D /* GoogleService-Info.plist in Resources */,
-				928D53FE252495AB004AB475 /* Preview Assets.xcassets in Resources */,
-				928D53FB252495AB004AB475 /* Assets.xcassets in Resources */,
+
+				92836E3425637EDB00A37DBC /* LaunchScreen.storyboard in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
