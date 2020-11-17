@@ -1,0 +1,6 @@
+framework module Pods_UseCoreNFC_UseCoreNFCUITests {
+  umbrella header "Pods-UseCoreNFC-UseCoreNFCUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

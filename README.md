@@ -1,7 +1,46 @@
-# Use_CoreNFC
-CoreNFCを用いて実装する
+# ピッとたいむ  
 
-※リリース申請中！
+**個人開発**  
 
-<img src="https://user-images.githubusercontent.com/52638834/95674700-e493a200-0bec-11eb-984f-3db0a9febfe0.png" width="300"><img src="https://user-images.githubusercontent.com/52638834/95674708-f4ab8180-0bec-11eb-8802-bcd5c4ba8a07.png" width="300"><img src="https://user-images.githubusercontent.com/52638834/95674705-f2492780-0bec-11eb-89bd-9864e0cbb860.png" width="300">
+
+**概要:** NFCタグを用いた勤怠管理アプリ
+
+
+**開発言語:** Swift, CoreData, SwiftUI
+
+
+**役割:** すべて
+
+
+**AppStore:**
+
+<https://apps.apple.com/us/app/%E3%83%94%E3%83%83%E3%81%A8%E3%81%9F%E3%81%84%E3%82%80/id1535130388>
+
+
+
+**開発する上で大変だったこと:**
+
+開発する上で大変だったことは、初めて使うライブラリで苦戦したことです。CoreNFCというライブラリを用いて開発したのですが、ネット上に情報があまり存在しておらず、開発する上で苦労しました。
+
+
+**成果:**
+
+友人に使ってもらい、「すごい！」と言ってくれ星5を頂くことができたのが成果です。
+
+
+**もらったフィードバック:**
+
+利用者のどんな問題を解決したいのかもっと明確にしたほうが良いとフィードバックをいただきました。
+今後はもっと使用例を明確するように改善していきたいと思います。
+
+**今後の展望:**
+
+今後は、Firebaseを使いコミュニケーションを取れるような場所にすることを今後の展望としております。
+現在のアプリでは自己完結してしまっているので、多くのユーザーと繋がり、お互いに相乗効果が生まれるような構図にしたいと考えております。
+
+<p text-align="center">
+  <img src="https://user-images.githubusercontent.com/52638834/95674700-e493a200-0bec-11eb-984f-3db0a9febfe0.png" width="300">
+  <img src="https://user-images.githubusercontent.com/52638834/95674708-f4ab8180-0bec-11eb-8802-bcd5c4ba8a07.png" width="300">
+  <img src="https://user-images.githubusercontent.com/52638834/95674705-f2492780-0bec-11eb-89bd-9864e0cbb860.png" width="300">
+</p>
 
