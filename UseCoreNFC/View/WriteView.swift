@@ -11,27 +11,27 @@ struct WriteView: View {
     var reader: GeometryProxy
     var sessionWrite: NFCSessionWrite
     
-    @Binding var isSheetPresented: Bool
     
+    @Binding var isSheetPresented: Bool
     
     
     var body: some View {
         VStack{
             Text("あしあとを書きこみましよう！")
                 .font(.title2)
-                .foregroundColor(Color(#colorLiteral(red: 0.9150015712, green: 0.5250076056, blue: 0.582652986, alpha: 1)))
+                .foregroundColor(.orange)
                 .padding()
             
             
             // Write Button
             Button(action: {
                 self.sessionWrite.beginScanning()
-                
             }, label: {
                 Text("①あしあとを書きこむ")
                     .font(.title)
                     .frame(width: reader.size.width * 0.9, height: reader.size.height * 0.15)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
+                    .background(Color(.orange))
             })
             .foregroundColor(.blue)
             .clipShape(RoundedRectangle(cornerRadius: 20))

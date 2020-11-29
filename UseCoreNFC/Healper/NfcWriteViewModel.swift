@@ -16,13 +16,6 @@ class NFCSessionWrite: NSObject, NFCNDEFReaderSessionDelegate{
     var addRecordVM = AddRecordViewModel()
     
     
-    
-    @State var isFinished: Bool = false
-    
-    
-
-
-    
     func  beginScanning(){
         guard NFCNDEFReaderSession.readingAvailable else{
             print("スキャンに対応されていない機種です。申し訳ございません。")
@@ -31,6 +24,7 @@ class NFCSessionWrite: NSObject, NFCNDEFReaderSessionDelegate{
         session = NFCNDEFReaderSession(delegate: self, queue: .main, invalidateAfterFirstRead: false)
         session?.alertMessage = "データを書き込むのでNFCタグに近づけてください"
         session?.begin()
+
     }
     
     func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
@@ -88,8 +82,6 @@ class NFCSessionWrite: NSObject, NFCNDEFReaderSessionDelegate{
                         print(type(of: nowTime))
                         
                         let format_nowTime = DateUtils.stringFromDate(date: nowTime, format: "yyyy年MM月dd日 HH時mm分ss秒 Z")
-                        
-                        print("\(format_nowTime)フォーマットされた現在時刻を表示")
 
                         payLoad = NFCNDEFPayload(
                             format: .nfcWellKnown,
@@ -97,7 +89,6 @@ class NFCSessionWrite: NSObject, NFCNDEFReaderSessionDelegate{
                             identifier: "Text".data(using: .utf8)!,
                             payload: format_nowTime.data(using: .utf8)!
                         )
-                        print("\(format_nowTime)　フォーマットされた現在時刻を表示する")
                             
                         //CoreDataに保存する
                         // Write to CoreData
@@ -118,7 +109,7 @@ class NFCSessionWrite: NSObject, NFCNDEFReaderSessionDelegate{
                                 // to write
                                 session.alertMessage = "書き込むことに成功しました！"
                                 print("Success write.")
-                                self.isFinished.toggle()
+                                
                             }
                             session.invalidate()
                         }
