@@ -11,6 +11,27 @@ struct CardView: View {
     
     var content: String
     
+    
+    var body: some View {
+        HStack(alignment: .center, spacing: 20, content: {
+            HStack{
+                Spacer()
+                Text("\(month(content: content))" + "/" + "\(day(content: content))")
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                Spacer()
+                Text("\(hour(content: content)):" + "\(minutes(content: content))")
+                    .font(.largeTitle)
+                    .foregroundColor(.black)
+                    .fontWeight(.bold)
+                Spacer()
+            }.background(Color(.white))
+        })
+        .cornerRadius(20)
+        .background(Color(.white))
+    }
+    
+    //MARK: FUNCTIONS
     func month(content: String) -> String {
         return DateUtils.stringFromDateOnlyMonth(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日 HH時mm分ss秒 Z"))
     }
@@ -31,36 +52,10 @@ struct CardView: View {
         print("intHour = \(DateUtils.HourFromTotalMunutes(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日HH時mm分ss秒 Z")))")
         return DateUtils.HourFromTotalMunutes(date: DateUtils.dateFromString(string: content, format: "yyyy年MM月dd日HH時mm分ss秒 Z"))
     }
-    
-    var body: some View {
-        
-        HStack{
-            Spacer()
-            HStack{
-                Spacer()
-                Image(systemName: "sun.max.fill")
-                Spacer()
-                Text("\(month(content: content))" + "/" + "\(day(content: content))")
-                    .foregroundColor(Color("black-pinkcolor"))
-                    .padding()
-                Spacer()
-                Text("\(hour(content: content)):" + "\(minutes(content: content))")
-                    .foregroundColor(Color("black-pinkcolor"))
-                    .bold()
-                Spacer()
-            }.background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-            
-            Spacer()    
-            
-        }.background(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
-        
-    }
-    
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
         CardView(content: "2020年11月01日 07時52分42秒 +0900").previewLayout(.sizeThatFits)
-        
     }
 }

@@ -10,13 +10,20 @@ import CoreNFC
 import UIKit
 
 
-class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
+class NFCSessionWrite: NSObject, NFCNDEFReaderSessionDelegate{
     
     var session : NFCNDEFReaderSession?
-    @State var addRecordVM = AddRecordViewModel()
+    var addRecordVM = AddRecordViewModel()
+    
+    
+    
+    @State var isFinished: Bool = false
+    
+    
+
 
     
-    public func  beginScanning(){
+    func  beginScanning(){
         guard NFCNDEFReaderSession.readingAvailable else{
             print("スキャンに対応されていない機種です。申し訳ございません。")
             return
@@ -76,7 +83,6 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         print("Read Write")
                         let payLoad : NFCNDEFPayload?
                         
-                        // MARK: - Date を読み取り書き込む
                         let nowTime = Date()
                         print("現在の時刻を取得する\(nowTime)")
                         print(type(of: nowTime))
@@ -84,7 +90,6 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         let format_nowTime = DateUtils.stringFromDate(date: nowTime, format: "yyyy年MM月dd日 HH時mm分ss秒 Z")
                         
                         print("\(format_nowTime)フォーマットされた現在時刻を表示")
-                        //self.readingData = format_nowTime
 
                         payLoad = NFCNDEFPayload(
                             format: .nfcWellKnown,
@@ -92,19 +97,14 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                             identifier: "Text".data(using: .utf8)!,
                             payload: format_nowTime.data(using: .utf8)!
                         )
-                        
                         print("\(format_nowTime)　フォーマットされた現在時刻を表示する")
-                        
-                        
+                            
                         //CoreDataに保存する
                         // Write to CoreData
                         self.addRecordVM.input = format_nowTime
                         // Save to CoreData
                         self.addRecordVM.saveRecord()
                     
-                        
-                        
-                        
                         //make our message array
                         let nfcMessage = NFCNDEFMessage(records: [payLoad!])
                         print("\(nfcMessage)")
@@ -115,15 +115,13 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                                 session.alertMessage = "Write NDEF fail : \(error!.localizedDescription)"
                                 print("fail write : \(String(describing: error?.localizedDescription))")
                             } else {
-                                
                                 // to write
                                 session.alertMessage = "書き込むことに成功しました！"
                                 print("Success write.")
+                                self.isFinished.toggle()
                             }
                             session.invalidate()
                         }
-                        
-                        
                     case .readOnly:
                         print("Read Only")
                         session.alertMessage = "Tag is read only."
@@ -133,13 +131,8 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         print("Unkwon error")
                         session.alertMessage = "Unknown NDEF tag status"
                         session.invalidate()
-                     
                 }
             }
-            
         }
     }
-    
-    
-    
 }
